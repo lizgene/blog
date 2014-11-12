@@ -1,0 +1,40 @@
+<header>
+    <!--   show navbar in gift-giver flow IF user is logged in. Otherwise, show no navbar.  -->  
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-mobile-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<%= root_path %>">
+          <div id="logo" class="text-center">
+            Blog</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-mobile-menu">
+        <ul class="nav navbar-nav navbar-right text-uppercase text-center">
+
+        <% if user_signed_in? %>
+          <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+        <% end %>
+          <li><%= link_to "About", about_path, :class => 'navbar-link'  %></li>
+          <li><%= link_to "Posts", posts_path, :class => 'navbar-link'  %></li>
+          <li><%= link_to "Photos", photos_path, :class => 'navbar-link'  %></li>
+
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+
+    </div><!-- /.container-->
+
+  </nav>
+</header>
