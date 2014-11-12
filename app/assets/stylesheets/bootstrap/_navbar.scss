@@ -1,0 +1,21 @@
+@import "variables";
+
+.navbar-default .navbar-nav {
+   li a {
+      padding: 0px 0px 15px 0px;
+      margin: 10px 15px;
+    }
+
+    > li:first-child a:hover { border-bottom: 2px solid $brand-primary; }
+    > li:nth-child(2) a:hover { border-bottom: 2px solid $brand-warning; }
+    > li:nth-child(3) a:hover { border-bottom: 2px solid $brand-danger; }
+}
+
+.navbar-default .navbar-header {
+  a.navbar-brand {
+    padding: 15px 0px 15px 0px;
+    &:hover {
+      border-bottom: 2px solid $brand-info;
+    }
+  }
+}
