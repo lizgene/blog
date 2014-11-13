@@ -48,9 +48,9 @@ $input-background-focus: lighten(#444444, 100%);
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            $gray-light !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      $gray-light !default;
 
 //== Typography
 //
