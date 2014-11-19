@@ -1,0 +1,45 @@
+@import "bootstrap/variables";
+
+body {
+  padding: 0;
+  background-color: transparent;
+}
+
+.jumbotron {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  height: 700px;
+  text-align: center;
+  display: block;
+  position: relative;
+  background-color: transparent;
+  font-weight: bold;
+
+  &:after {
+    content: "";
+    background: url(<%= asset_path 'thailand-cover.jpg' %>);
+    background-repeat:repeat;
+    background-position:center;
+    background-attachment:fixed;
+    background-size:cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+
+h1 {
+  letter-spacing: 10px;
+  font-size: 84px;
+  margin-top: 25%;
+  color: $gray-darker;
+  font-family: "Impact", "Charcoal", sans-serif;
+}
+.subheading {
+  font-family: "Courier New", Courier, monospace;  
+}

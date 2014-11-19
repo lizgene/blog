@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'posts#index' 
+  root 'pages#home' 
 
   resources :posts
 
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about', as: :about
   get '/contact' => 'pages#contact', as: :contact
   get '/photos' => 'pages#photos', as: :photos
+  get '/index' => 'pages#home', as: :home
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

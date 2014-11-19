@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="text-uppercase">Blog Bitchez</h1>
+      <p class="subheading">a journey of epic proportions</p>
+      <p><%= link_to "go", posts_path %></p>
+    </div>
+  </div>
+
+</body>
+</html>
+
