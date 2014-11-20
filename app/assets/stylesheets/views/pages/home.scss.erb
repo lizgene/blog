@@ -8,7 +8,7 @@ body {
 .jumbotron {
   padding: 30px 15px;
   margin-bottom: 30px;
-  height: 700px;
+  height: 100vh;
   text-align: center;
   display: block;
   position: relative;
@@ -20,7 +20,6 @@ body {
     background: url(<%= asset_path 'thailand-cover.jpg' %>);
     background-repeat:repeat;
     background-position:center;
-    background-attachment:fixed;
     background-size:cover;
     opacity: 0.5;
     top: 0;
@@ -41,5 +40,70 @@ h1 {
   font-family: "Impact", "Charcoal", sans-serif;
 }
 .subheading {
-  font-family: "Courier New", Courier, monospace;  
+  font-family: $font-family-monospace;  
+}
+.border-top {
+  border-top: 1px solid $gray-light;
+}
+
+.info {
+  padding: 20px;
+
+  .vertical-content-small, .horizontal-content-small {
+    height: 250px;
+  }
+  .vertical-content-small {
+    padding: 20px 0px 30px 0px;
+    img {
+      padding-right: 20px;
+      border-right: 1px solid $gray-light;
+      width: 50%;
+      height: auto;
+    }
+  }
+  .horizontal-content-small {
+    padding: 20px 0px 30px 0px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .horizontal-content-large {
+    background-color: $gray-lighter;
+    height: 500px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .text {
+    width: 45%;
+    h2 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-style: bold;
+      position: relative;
+      padding-bottom: 2em;
+      &:after {
+        content: "";
+        width: 30%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        border-bottom: 1px solid $gray;
+      }
+    }
+    p {
+      letter-spacing: -1px;
+      font-size: 12px;
+      line-height: 1em;
+      padding-top: 1em;
+      font-family: $font-family-monospace; 
+    }
+  }
 }

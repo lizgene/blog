@@ -13,9 +13,44 @@
 
   <div class="jumbotron">
     <div class="container">
-      <h1 class="text-uppercase">Blog Bitchez</h1>
+      <h1 class="text-uppercase">CADENCE</h1>
       <p class="subheading">a journey of epic proportions</p>
-      <p><%= link_to "go", posts_path %></p>
+      
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row info">
+
+      <div class="col-sm-4">
+        <div class="vertical-content-small border-top" >
+          <%= image_tag "sf-couple.jpg" %>
+          <div class="text pull-right">
+            <h2>About Us</h2>
+            <p>This is the story all about how, Liz and Nathan traveled the world around.</p>
+            <p class="text-center"><%= link_to raw("go &#x2192;"), posts_path %></p>
+          </div>
+        </div>
+        <div class="vertical-content-small border-top">
+          <%= image_tag "trees.jpg" %>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="horizontal-content-large">
+          <%= image_tag "cyclist.jpg" %>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="horizontal-content-small border-top" >
+          <%= image_tag "thailand-bw.jpg" %>
+        </div>
+        <div class="vertical-content-small border-top">
+          <%= image_tag "beach-bus.jpg" %>
+        </div>
+      </div>
+
     </div>
   </div>
 

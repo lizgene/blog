@@ -48,15 +48,16 @@ $input-background-focus: lighten(#444444, 100%);
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $gray-light !default;
+$link-color:            $brand-danger !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      $gray-light !default;
+$link-hover-color:      darken($link-color, 13.5%) !default;
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Hipsterish", Helvetica, Verdana, Arial, sans-serif !default;
+$font-family-sans-serif:  "Biko", Helvetica, Verdana, Arial, sans-serif !default;
+$font-family-monospace: "Courier New", Courier, monospace;
 
 // $btn-default-font:     $font-family-sans-serif !default;
 // $font-family-headers:        "Hipsterish", Helvetica, Verdana, Arial, sans-serif !default;
