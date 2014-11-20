@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.0.1'
 gem 'autoprefixer-rails' #used with bootstrap-sass to add vendor prefixes automagically
+gem "font-awesome-rails"
 
 group :development do
   gem 'pry'
