@@ -10,6 +10,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render partial: "layouts/header" %>
+
+  <main>
 
   <div class="full-page jumbotron">
     <div class="container">
@@ -95,6 +98,8 @@
       <%= image_tag "bay-bridge.jpg", class: "img-responsive" %>
     </div>
   </div>
+
+  </main>
 
 </body>
 </html>

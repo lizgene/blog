@@ -1,7 +1,9 @@
 @import "variables";
 
 header {
-  height: 100px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
 }
 
 .navbar .nav,
