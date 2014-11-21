@@ -11,70 +11,89 @@
 </head>
 <body>
 
-  <div class="jumbotron">
+  <div class="full-page jumbotron">
     <div class="container">
-      <h1 class="text-uppercase">there</h1>
-      <p class="subheading">and back again</p>
+      <h1 class="text-uppercase">hello world</h1>
+      <p class="subheading">it's liz and nathan</p>
       <p class="lets-go">join us<br /><i class="fa fa-chevron-down"></i></p>
     </div>
   </div>
 
-  <div class="container">
-    <div class="row info">
+  <div class="full-page info">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <%= link_to about_path do %>
+            <div class="vertical-content-small border-top" >
+              <%= image_tag "sf-couple.jpg" %>
+              <div class="text pull-right">
+                <h2>Us</h2>
+                <p>This is the story all about how, Liz and Nathan traveled the world around.</p>
+              </div>
+            </div>
+          <% end %>
 
-      <div class="col-sm-4">
-        <div class="vertical-content-small border-top" >
-          <%= image_tag "sf-couple.jpg" %>
-          <div class="text pull-right">
-            <h2>Us</h2>
-            <p>This is the story all about how, Liz and Nathan traveled the world around.</p>
-            <p class="text-center"><%= link_to raw("learn &#x2192;"), posts_path %></p>
-          </div>
+          <%= link_to posts_path do %>
+            <div class="vertical-content-small border-top">
+              <%= image_tag "trees.jpg" %>
+              <div class="text pull-right">
+                <h2>Journey</h2>
+                <p>Find out where we're going, and where we've been.</p>
+              </div>
+            </div>
+          <% end %>
         </div>
-        <div class="vertical-content-small border-top">
-          <%= image_tag "trees.jpg" %>
-          <div class="text pull-right">
-            <h2>Journey</h2>
-            <p>Find out where we're going, and where we've been.</p>
-            <p class="text-center"><%= link_to raw("read &#x2192;"), posts_path %></p>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-sm-4">
-        <div class="horizontal-content-large">
-          <%= image_tag "cyclist.jpg" %>
-          <div class="text center-block">
-            <h2>Blog</h2>
-            <p>Read up on our journey step-by-step. This is also a place for a short blog post preview.</p>
-            <p class="text-center"><%= link_to raw("read &#x2192;"), posts_path %></p>
+        <div class="col-sm-4">
+          <div class="horizontal-content-large">
+            <%= image_tag "cyclist.jpg" %>
+            <div class="text center-block">
+              <h2>Blog</h2>
+              <p>Read up on our journey step-by-step. This is also a place for a short blog post preview. Let's pretend this is a blog preview and make it really long and we're going to make it so long that it actually needs to cut off at the end. Read up on our journey step-by-step. This is also a place for a short blog post preview. Let's pretend this is a blog preview and make it really long and we're going to make it so long that it actually needs to cut off at the end.</p>
+              <div class="text-center">
+                <%= link_to raw("read &#x2192;"), posts_path %>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-sm-4">
-        <div class="horizontal-content-small border-top" >
-          <%= image_tag "thailand-bw.jpg" %>
-          <div class="text center-block">
-            <h2>Photos</h2>
-            <p class="text-center"><%= link_to raw("see &#x2192;"), posts_path %></p>
-          </div>
-        </div>
-        <div class="vertical-content-small border-top">
-          <%= image_tag "beach-bus.jpg" %>
-          <div class="text pull-right">
-            <h2>Contact</h2>
-            <p>Send us an email, mail us a card.</p>
-            <p class="text-center"><%= link_to raw("do &#x2192;"), posts_path %></p>
-          </div>
-        </div>
-      </div>
+        <div class="col-sm-4">
+          <%= link_to posts_path do %>
+            <div class="horizontal-content-small border-top" >
+              <%= image_tag "thailand-bw.jpg" %>
+              <div class="text">
+                <div class="col-xs-12 col-sm-6">
+                  <h2>Photos</h2>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <p>Amature photography. Professional awesome.</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
 
+          <%= link_to posts_path do %>
+            <div class="vertical-content-small border-top">
+              <%= image_tag "beach-bus.jpg" %>
+              <div class="text pull-right">
+                <h2>Contact</h2>
+                <p>Send us an email, mail us a card.</p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="col-xs-12 text-center">
+          <a class="btn btn-special" href="<%= posts_path %>">continue journey</a>
+        </div>
+      </div><!-- .row -->
     </div>
   </div>
 
-  <div class="container">
-    <%= image_tag "bay-bridge.jpg", class: "img-responsive" %>
+  <div class="full-page">
+    <div class="container">
+      <%= image_tag "bay-bridge.jpg", class: "img-responsive" %>
+    </div>
   </div>
 
 </body>

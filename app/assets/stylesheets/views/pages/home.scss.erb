@@ -5,10 +5,22 @@ body {
   background-color: transparent;
 }
 
+a {
+  color: $gray-dark;
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+div.full-page {
+    width:100%;
+    position: relative;
+    height: 100vh;
+}
+
 .jumbotron {
   padding: 30px 15px 0px 15px;
   margin-bottom: 30px;
-  height: 100vh;
   text-align: center;
   display: block;
   position: relative;
@@ -20,8 +32,8 @@ body {
     background: url(<%= asset_path 'thailand-cover.jpg' %>);
     background-repeat:repeat;
     background-position:center;
+    background-attachment: fixed;
     background-size:cover;
-    // opacity: 0.5;
     top: 0;
     left: 0;
     bottom: 0;
@@ -44,24 +56,32 @@ body {
     font-weight: bold;
     font-family: $font-family-monospace;  
   }
-  .lets-go {
-    text-align: center;
-    position: absolute;
-    font-size: 24px;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    text-shadow: 0px 1px 2px $gray-darker;
-    color: white;
-  }
+}
+.lets-go {
+  text-align: center;
+  position: absolute;
+  font-size: 24px;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-shadow: 0px 1px 2px $gray-darker;
+  color: white;
 }
 .border-top {
   border-top: 1px solid $gray-light;
 }
 
+.btn-special {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 0;
+  border: 2px solid $gray;
+  color: $gray;
+}
+
 .info {
-  padding: 20px 0px 80px 0px;
+  position: relative;
 
   .vertical-content-small, .horizontal-content-small {
     height: 250px;
@@ -70,10 +90,9 @@ body {
   .vertical-content-small {
     padding: 20px 0px 30px 0px;
     img {
-      padding-right: 20px;
       border-right: 1px solid $gray-light;
-      width: 50%;
-      height: auto;
+      max-width: 50%;
+      height: 100%;
     }
   }
   .horizontal-content-small {
@@ -82,11 +101,22 @@ body {
       width: 100%;
       height: auto;
     }
+    .text {
+      width: 100%;
+    }
   }
   .horizontal-content-large {
     background-color: $gray-lighter;
-    height: 500px;
     overflow: hidden;
+    padding-bottom: 20px;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+    p {
+      height: 10em; 
+      overflow: hidden;
+    }
   }
   .text {
     width: 45%;
@@ -98,7 +128,7 @@ body {
       font-weight: bold;
       font-style: bold;
       position: relative;
-      padding-bottom: 2em;
+      padding-bottom: 1.5em;
       &:after {
         content: "";
         width: 30%;
