@@ -1,15 +1,23 @@
 
 
 <div class="row">
-  <div class="col-sm-12">
+
+  <div class="col-sm-12 header">
+    <%= link_to raw('&#x2190; Back to all posts'), posts_path, class: "back" %>
     <h1><%= @post.title %></h1>
+    <p class="date"><%= @post.created_at.strftime("%d %B %Y") %></p>
   </div>
-  <div class="col-sm-12">
+
+  <div class="col-sm-12 image">
+    <%= image_tag "bay-bridge.jpg", class: "img-responsive" %>
+  </div>
+
+  <div class="col-sm-12 body">
     <%= simple_format @post.body %>
   </div>
+
 </div>
 
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_post_path(@post) %>
 <% end %>
-<%= link_to 'Back', posts_path %>
