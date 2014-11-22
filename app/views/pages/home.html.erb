@@ -36,7 +36,7 @@
 
         <% @posts.each do |post| %>
           <div class="pin col-xs-12 col-sm-4">
-            <div class="preview-image" style="background-image: url(<%= image_url "beach-bus.jpg" %>)"><h2><%= post.title %></h2><p><%= post.created_at.strftime("%d %B %Y") %></p></div>
+            <div class="preview-image" style="background-image: url(<%= image_url "bay-bridge.jpg" %>)"><h2><%= post.title %></h2><p><%= post.created_at.strftime("%d %B %Y") %></p></div>
             <p>
               <%= post.body %>
             </p>
