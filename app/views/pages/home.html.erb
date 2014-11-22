@@ -35,13 +35,16 @@
       <div class="row">
 
         <% @posts.each do |post| %>
-          <div class="pin col-xs-12 col-sm-6">
-            <div class="preview-image" style="background-image: url(<%= image_url "bay-bridge.jpg" %>)"><h2><%= post.title %></h2><p><%= post.created_at.strftime("%d %B %Y") %></p></div>
-            <p>
-              <%= post.body %>
-            </p>
-          </div>
+          <%= link_to post_url(post) do %>
+            <div class="pin col-xs-12 col-sm-6">
+              <div class="preview-image" style="background-image: url(<%= image_url "bay-bridge.jpg" %>)"><h2><%= post.title %></h2><p><%= post.created_at.strftime("%d %B %Y") %></p></div>
+              <p>
+                <%= post.body %>
+              </p>
+            </div>
+          <% end %>
         <% end %>
+
 
       <div class="col-xs-12 text-center">
         <a class="btn btn-special" href="<%= posts_path %>">continue journey</a>
