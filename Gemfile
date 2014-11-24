@@ -13,6 +13,8 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.0.1'
 gem 'autoprefixer-rails' #used with bootstrap-sass to add vendor prefixes automagically
 gem "font-awesome-rails"
+gem 'picasa', '~> 0.7.2'
+gem "omniauth-google-oauth2"
 
 group :development do
   gem 'pry'
