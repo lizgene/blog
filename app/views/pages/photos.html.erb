@@ -1,3 +1,7 @@
-<% @photos.each do |photo| %>
-  <%= image_tag photo.content.src %>
-<% end %>
+<div class="row">
+  <% @photos.each do |photo| %>
+    <div class="col-md-6 col-xs-12">
+      <%= image_tag photo.content.src, class: "img-responsive center-block", style: "height: 300px; padding: 20px;" %>
+    </div>
+  <% end %>
+</div>
