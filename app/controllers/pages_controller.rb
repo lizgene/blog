@@ -15,7 +15,8 @@ class PagesController < ApplicationController
   end
 
   def photos
-    client = Picasa::Client.new(user_id: current_user.email, authorization_header: "Bearer #{current_user.single_access_token}")
+    user = User.find_by_email("liz.hubertz@gmail.com")
+    client = Picasa::Client.new(user_id: user.email, authorization_header: "Bearer #{user.single_access_token}")
     album = client.album.show(5599961089581972241)
     @photos = album.photos
 
