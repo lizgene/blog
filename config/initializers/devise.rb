@@ -234,8 +234,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   require "omniauth-google-oauth2"
 
-  #NEED TO PUT APP_ID AND APP_SECRET IN SECURE LOCATION - WILL NOT WORK WITHOUT THESE!
-  config.omniauth :google_oauth2, "APP_ID", "APP_SECRET", scope: 'http://picasaweb.google.com/data/, https://www.googleapis.com/auth/userinfo.email'
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'http://picasaweb.google.com/data/, https://www.googleapis.com/auth/userinfo.email'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

@@ -15,6 +15,7 @@ gem 'autoprefixer-rails' #used with bootstrap-sass to add vendor prefixes automa
 gem "font-awesome-rails"
 gem 'picasa', '~> 0.7.2'
 gem "omniauth-google-oauth2"
+gem 'dotenv-rails', :groups => [:development, :test] #lets me use .env file to store api keys. production stored on heroku.
 
 group :development do
   gem 'pry'
