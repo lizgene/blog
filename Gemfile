@@ -19,6 +19,7 @@ gem 'dotenv-rails', :groups => [:development, :test] #lets me use .env file to s
 
 group :development do
   gem 'pry'
+  gem 'pry-remote'
   gem 'spring'
 end
 
