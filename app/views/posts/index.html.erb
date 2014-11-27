@@ -1,13 +1,14 @@
-<% @posts.each do |post| %>
-  <div class="row">
-    <div class="col-sm-12">
-      <h2><%= link_to post.title, post %></h2>
-    </div>
-    <div class="col-sm-12">
-      <%= simple_format post.body %>
-    </div>
-  </div>
-<% end %>
+  <% @posts.each do |post| %>
+    <%= link_to post_url(post) do %>
+      <div class="pin col-xs-12 col-sm-6">
+        <div class="preview-image" style="background-image: url(<%= image_url "bay-bridge.jpg" %>)"><h2><%= post.title %></h2><p><%= post.created_at.strftime("%d %B %Y") %></p></div>
+        <p>
+          <%= post.body %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+
 
 <!--   <tbody>
     <% @posts.each do |post| %>
