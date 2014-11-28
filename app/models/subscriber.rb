@@ -5,6 +5,6 @@ class Subscriber < ActiveRecord::Base
   after_create :send_welcome_email
 
   def send_welcome_email
-    UserMailer.delay.welcome(self)
+    SubscriberMailer.welcome(self).deliver
   end
 end
