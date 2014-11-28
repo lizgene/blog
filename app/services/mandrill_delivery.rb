@@ -60,7 +60,7 @@ class MandrillDelivery
 
   # Sends email via Mandrill
   def send_mandrill(mail)
-    template = mail[:template] || "little-list-welcome"
+    template = mail[:template] || "default"
     m = Mandrill::API.new(ENV["MANDRILL_API_KEY"])
 
     sending = m.messages.send_template(
