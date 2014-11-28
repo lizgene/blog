@@ -1,3 +1,4 @@
+<div class="row">
   <% @posts.each do |post| %>
     <%= link_to post_url(post) do %>
       <div class="pin col-xs-12 col-sm-6">
@@ -8,21 +9,11 @@
       </div>
     <% end %>
   <% end %>
+</div>
 
-
-<!--   <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= simple_format post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
-
+<div class="row center-block text-center">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
 
 <% if user_signed_in? %>
   <%= link_to 'New Post', new_post_path %>

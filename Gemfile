@@ -18,6 +18,7 @@ gem "omniauth-google-oauth2"
 gem 'dotenv-rails', :groups => [:development, :test] #lets me use .env file to store api keys. production stored on heroku.
 gem 'delayed_job_active_record'
 gem 'mandrill-api'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem 'pry'
