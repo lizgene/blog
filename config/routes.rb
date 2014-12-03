@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {
-    :omniauth_callbacks => "users/omniauth_callbacks"
+    :omniauth_callbacks => "users/omniauth_callbacks",
+    :registrations => "users/registrations"
   }
   root 'pages#home' 
 
   resources :posts
   resources :subscribers
+  resources :albums
+  resources :photos
+
+  get '/avatar' => 'user#new_avatar'
 
 
   # Pages
   get '/about' => 'pages#about', as: :about
   get '/contact' => 'pages#contact', as: :contact
-  get '/photos' => 'pages#photos', as: :photos
   get '/index' => 'pages#home', as: :home
   get '/test' => 'pages#test'
 

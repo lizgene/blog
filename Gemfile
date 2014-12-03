@@ -19,6 +19,8 @@ gem 'dotenv-rails', :groups => [:development, :test] #lets me use .env file to s
 gem 'delayed_job_active_record'
 gem 'mandrill-api'
 gem 'will_paginate-bootstrap'
+gem 'aws-sdk'
+gem "jquery-ui-rails"
 
 group :development do
   gem 'pry'
