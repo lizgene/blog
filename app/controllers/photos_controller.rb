@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
 
   # GET /photos
   def index
-    @photos = photo.all.order('created_at DESC').page(params[:page]).per_page(10)
+    @photos = Photo.all.order('created_at DESC').page(params[:page]).per_page(10)
   end
 
   # GET /photos/1
@@ -22,17 +22,14 @@ class PhotosController < ApplicationController
 
   # POST /photos
   def create
-    @photo = Photo.new(photo_params)
+    @photo = Photo.create(photo_params)
 
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
-      else
-        format.html { render :new }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
+    if @photo.save
+      render json: { success: true, message: "success" }
+    else
+      render json: { success: false, message: "fail" }
     end
+
   end
 
   # PATCH/PUT /photos/1
@@ -60,11 +57,11 @@ class PhotosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
-      @photo = photo.find(params[:id])
+      @photo = Photo.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:post).permit(:album_id, :url)
+      params.require(:photo).permit(:album_id, :direct_upload_url, :upload, :processed)
     end
 end

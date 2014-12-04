@@ -1,12 +1,12 @@
-<h1>New album</h1>
+<h1>Upload photos</h1>
 
 <%#= render 'form' %>
 
 
 
-<%= s3_uploader_form callback_url: albums_url,
+<%= s3_uploader_form callback_url: photos_url,
   id: "s3_uploader",
-  callback_param: "photos_attributes[direct_upload_url]",
+  callback_param: "photo[direct_upload_url]",
   expiration: 24.hours.from_now.utc.iso8601,
   max_file_size: 100.megabytes do %>
   <%= file_field_tag :file, multiple: true %>
@@ -23,4 +23,4 @@
 </div>
 </script>
 
-<%= link_to 'Back', albums_path %>
+<%= link_to 'Back', photos_path %>

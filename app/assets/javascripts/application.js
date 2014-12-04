@@ -15,4 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery-ui
+//= require s3_direct_upload
 //= require_tree .

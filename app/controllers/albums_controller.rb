@@ -13,7 +13,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums/new
   def new
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
+    # @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
     @album = Album.new
   end
 
@@ -22,19 +22,32 @@ class AlbumsController < ApplicationController
     @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
   end
 
+  # # POST /albums
+  # def create
+  #   @album = Album.new(album_params)
+
+  #   respond_to do |format|
+  #     if @album.save
+  #       format.html { redirect_to @album, notice: 'album was successfully created.' }
+  #       format.json { render :show, status: :created, location: @album }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @album.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  # @http_method XHR POST
   # POST /albums
   def create
-    @album = Album.new(album_params)
-
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to @album, notice: 'album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
-      end
+    if ! params[:album]
+      params[:album] = []
+      params[:album][:title] = "New Title"
+      params[:album][:description] = "New description"
+      params[:album][:photos_attributes] = params[:photos_attributes]
     end
+
+    @album = Album.create(album_params)
   end
 
   # PATCH/PUT /albums/1
@@ -70,7 +83,7 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :description, :cover_photo_id, photos_attributes: [ :album_id, :url ])
+      params.require(:album).permit(:title, :description, :cover_photo_id, photos_attributes: [ :album_id, :direct_upload_url, :upload, :processed ])
     end
 
     def photo_params photos_attributes, album_id

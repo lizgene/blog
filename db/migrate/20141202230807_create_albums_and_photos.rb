@@ -10,16 +10,18 @@ class CreateAlbumsAndPhotos < ActiveRecord::Migration
 
     create_table :photos do |t|
       t.integer :album_id
-      t.string :url
+      t.string :direct_upload_url, null: false
+      t.attachment :upload
+      t.boolean :processed, default: false, null: false
 
       t.timestamps
     end
     add_index :photos, :album_id
+    add_index :photos, :processed
   end
 
   def down
     drop_table :albums
     drop_table :photos
-    remove_index :photos, :album_id
   end
 end

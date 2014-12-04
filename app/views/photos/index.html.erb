@@ -1,0 +1,13 @@
+<div class="row">
+  <% @photos.each do |photo| %>
+    <%= image_tag photo.direct_upload_url, class: "img-responsive" %>
+  <% end %>
+</div>
+
+<div class="row center-block text-center">
+  <%= will_paginate @photos, renderer: BootstrapPagination::Rails %>
+</div>
+
+<% if user_signed_in? %>
+  <%= link_to 'New photo', new_photo_path %>
+<% end %>

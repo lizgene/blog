@@ -21,6 +21,8 @@ gem 'mandrill-api'
 gem 'will_paginate-bootstrap'
 gem 'aws-sdk'
 gem "jquery-ui-rails"
+gem "paperclip"
+gem "s3_direct_upload"
 
 group :development do
   gem 'pry'
