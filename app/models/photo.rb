@@ -74,6 +74,7 @@ class Photo < ActiveRecord::Base
   
   # Queue file processing
   def queue_processing
+    return
     Photo.transfer_and_cleanup(id)
   end
  
