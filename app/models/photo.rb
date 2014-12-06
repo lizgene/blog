@@ -25,13 +25,12 @@ class Photo < ActiveRecord::Base
     paperclip_file_path = "photos/uploads/#{photo.id}/original/#{direct_upload_url_data[:filename]}"
     s3.buckets[Rails.configuration.aws[:bucket]].objects[paperclip_file_path].copy_from(direct_upload_url_data[:path])
 
-    #save transformations
+    #save styles
     Paperclip::Attachment.default_options[:styles].each do |style_name, dimensions|
+      tmp_image_file_path =  Pathname.new(photo.transform(style_name, dimensions))
       paperclip_file_path = "photos/uploads/#{photo.id}/#{style_name}/#{direct_upload_url_data[:filename]}"
 
-      tmp_image_file_path = Rails.root.to_s + photo.transform(style_name, dimensions)
-
-      s3.buckets[Rails.configuration.aws[:bucket]].objects[paperclip_file_path].copy_from(tmp_image_file_path)
+      s3.buckets[Rails.configuration.aws[:bucket]].objects.create(paperclip_file_path, tmp_image_file_path)
     end
  
     photo.processed = true
@@ -74,7 +73,6 @@ class Photo < ActiveRecord::Base
   
   # Queue file processing
   def queue_processing
-    return
     Photo.transfer_and_cleanup(id)
   end
  
