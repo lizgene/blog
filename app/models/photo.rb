@@ -4,7 +4,7 @@ class Photo < ActiveRecord::Base
   
   belongs_to :album
   has_attached_file :upload
- 
+
   validates :direct_upload_url, presence: true, format: { with: DIRECT_UPLOAD_URL_FORMAT }
     
   before_create :set_upload_attributes
@@ -15,28 +15,37 @@ class Photo < ActiveRecord::Base
     write_attribute(:direct_upload_url, (CGI.unescape(escaped_url) rescue nil))
   end
   
-  # Determines if file requires post-processing (image resizing, etc)
-  def post_process_required?
-    %r{^(image|(x-)?application)/(bmp|gif|jpeg|jpg|pjpeg|png|x-png)$}.match(upload_content_type).present?
-  end
-  
   # Final upload processing step
   def self.transfer_and_cleanup(id)
     photo = Photo.find(id)
     direct_upload_url_data = DIRECT_UPLOAD_URL_FORMAT.match(photo.direct_upload_url)
     s3 = AWS::S3.new
     
-    if photo.post_process_required?
-      photo.upload = URI.parse(URI.escape(photo.direct_upload_url))
-    else
-      paperclip_file_path = "photos/uploads/#{id}/original/#{direct_upload_url_data[:filename]}"
-      s3.buckets[Rails.configuration.aws[:bucket]].objects[paperclip_file_path].copy_from(direct_upload_url_data[:path])
+    #save original size
+    paperclip_file_path = "photos/uploads/#{photo.id}/original/#{direct_upload_url_data[:filename]}"
+    s3.buckets[Rails.configuration.aws[:bucket]].objects[paperclip_file_path].copy_from(direct_upload_url_data[:path])
+
+    #save transformations
+    Paperclip::Attachment.default_options[:styles].each do |style_name, dimensions|
+      paperclip_file_path = "photos/uploads/#{photo.id}/#{style_name}/#{direct_upload_url_data[:filename]}"
+
+      tmp_image_file_path = Rails.root.to_s + photo.transform(style_name, dimensions)
+
+      s3.buckets[Rails.configuration.aws[:bucket]].objects[paperclip_file_path].copy_from(tmp_image_file_path)
     end
  
     photo.processed = true
     photo.save
     
-    s3.buckets[Rails.configuration.aws[:bucket]].objects[direct_upload_url_data[:path]].delete
+    #delete the original from aws so we're not using up extra storage
+    s3.buckets[Rails.configuration.aws[:bucket]].objects[direct_upload_url_data[:path]].delete 
+  end
+
+  def transform style_name, dimensions
+    image = MiniMagick::Image.open(upload(:original))
+    image.resize(dimensions)
+
+    return image.path 
   end
       
   protected
@@ -65,7 +74,7 @@ class Photo < ActiveRecord::Base
   
   # Queue file processing
   def queue_processing
-    Photo.delay.transfer_and_cleanup(id)
+    Photo.transfer_and_cleanup(id)
   end
  
 end

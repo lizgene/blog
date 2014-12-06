@@ -23,6 +23,7 @@ gem 'aws-sdk'
 gem "jquery-ui-rails"
 gem "paperclip"
 gem "s3_direct_upload"
+gem "mini_magick"
 
 group :development do
   gem 'pry'
