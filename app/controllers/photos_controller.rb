@@ -22,6 +22,8 @@ class PhotosController < ApplicationController
 
   # POST /photos
   def create
+    params[:photo][:album_id] = params[:album_id] if params[:album_id]
+
     @photo = Photo.create(photo_params)
 
     if @photo.save

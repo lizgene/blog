@@ -5,5 +5,5 @@ Paperclip::Attachment.default_options.merge!(
   s3_credentials:       Rails.configuration.aws,
   s3_permissions:       :private,
   s3_protocol:          'https',
-  styles:               { thumb: '50x50', medium: '800x800' }
+  styles:               { thumb: '200x150', medium: '400x300' }
 )

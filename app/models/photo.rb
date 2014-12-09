@@ -42,7 +42,13 @@ class Photo < ActiveRecord::Base
 
   def transform style_name, dimensions
     image = MiniMagick::Image.open(upload(:original))
-    image.resize(dimensions)
+
+    image.combine_options do |c|
+      c.auto_orient
+      c.resize(dimensions)
+      c.gravity "center"
+      c.crop "#{dimensions}+0+0"
+    end
 
     return image.path 
   end

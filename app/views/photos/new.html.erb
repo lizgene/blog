@@ -1,8 +1,8 @@
 <h1>Upload photos</h1>
 
-<%#= render 'form' %>
 
-
+<% albums_array = Album.all.map{ |album| [album.title, album.id] } %>
+<%= select_tag(:album_id, options_for_select(albums_array), class: "form-control") %>
 
 <%= s3_uploader_form callback_url: photos_url,
   id: "s3_uploader",
@@ -24,5 +24,6 @@
 </script>
 
 <%= link_to 'Back', photos_path %>
+<%= link_to 'Create a new album', new_album_path %>
 
 <!-- -->

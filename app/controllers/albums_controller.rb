@@ -13,48 +13,30 @@ class AlbumsController < ApplicationController
 
   # GET /albums/new
   def new
-    # @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
     @album = Album.new
   end
 
   # GET /albums/1/edit
   def edit
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: 201, acl: :public_read)
   end
 
-  # # POST /albums
-  # def create
-  #   @album = Album.new(album_params)
-
-  #   respond_to do |format|
-  #     if @album.save
-  #       format.html { redirect_to @album, notice: 'album was successfully created.' }
-  #       format.json { render :show, status: :created, location: @album }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @album.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
-  # @http_method XHR POST
   # POST /albums
   def create
-    if ! params[:album]
-      params[:album] = []
-      params[:album][:title] = "New Title"
-      params[:album][:description] = "New description"
-      params[:album][:photos_attributes] = params[:photos_attributes]
-    end
+    @album = Album.new(album_params)
 
-    @album = Album.create(album_params)
+    respond_to do |format|
+      if @album.save
+        format.html { redirect_to new_photo_url, notice: 'album was successfully created.' }
+        format.json { render :show, status: :created, location: @album }
+      else
+        format.html { render :new }
+        format.json { render json: @album.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /albums/1
   def update
-    photos_attributes = photo_params(params[:photos_attributes], @album.id)
-    params[:album][:photos_attributes] = photos_attributes
-
     respond_to do |format|
       if @album.update(album_params)
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
@@ -76,23 +58,13 @@ class AlbumsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_album
-      @album = Album.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_album
+    @album = Album.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def album_params
-      params.require(:album).permit(:title, :description, :cover_photo_id, photos_attributes: [ :album_id, :direct_upload_url, :upload, :processed ])
-    end
-
-    def photo_params photos_attributes, album_id
-      params = []
-      urls = photos_attributes[:urls].split(', ').reject!(&:empty?)
-
-      urls.each_with_index do |url, index|
-        params << {url: url, album_id: album_id}
-      end
-      return params
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def album_params
+    params.require(:album).permit(:title, :description, :cover_photo_id)
+  end
 end
