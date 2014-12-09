@@ -1,24 +1,22 @@
-<div class="row">
+<div class="row" id="albums">
 
-  <div class="col-sm-12 header">
-    <%= link_to raw('&#x2190; Back to all albums'), albums_path, class: "back" %>
+  <div class="col-sm-12 header text-center">
     <h1><%= @album.title %></h1>
+
+    <p class="body">
+      <%= simple_format @album.description %>
+    </p>
     <p class="date"><%= @album.created_at.strftime("%d %B %Y") %></p>
   </div>
 
   
   <div class="row">
-    <% 6.times do %>
     <% @album.photos.each do |photo| %>
-      <div class="col-xs-6 photo">
-        <%= image_tag photo.upload(:medium), class: "img-responsive" %>
+      <div class="col-xs-3">
+        <div class="photo" style="background-image: url('<%= photo.upload(:medium) %>');">
+        </div>
       </div>
     <% end %>
-    <% end %>
-  </div>
-
-  <div class="col-sm-12 body">
-    <%= simple_format @album.description %>
   </div>
 
 </div>
@@ -26,24 +24,3 @@
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_album_path(@album) %>
 <% end %>
-
-<style type="text/css">
-.photo {
-  height: 350px;
-  overflow: hidden;
-}
-img {
-  filter: gray; /* IE6-9 */
-  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-    -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.25);
-    box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.25);
-    margin-bottom:20px;
-}
-
-img:hover {
-  filter: none; /* IE6-9 */
-  -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
- 
-}
-</style>
