@@ -20,31 +20,35 @@ class AlbumsController < ApplicationController
   def edit
   end
 
-  # POST /albums
   def create
     @album = Album.new(album_params)
-
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to new_photo_url, notice: 'album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+    if @album.save
+      # to handle multiple images upload on create
+      if params[:images]
+        params[:images].each { |image|
+          @album.photos.create(image: image)
+        }
       end
+      flash[:notice] = "Your album has been created."
+      redirect_to @album
+    else 
+      flash[:alert] = "Something went wrong."
+      render :new
     end
   end
 
-  # PATCH/PUT /albums/1
   def update
-    respond_to do |format|
-      if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album }
-      else
-        format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+    if @album.update(params[:album].permit(:title,:description))
+      # to handle multiple images upload on update when user add more picture
+      if params[:images]
+        params[:images].each { |image|
+          @album.photos.create(image: image)
+        }
       end
+      flash[:notice] = "Album has been updated."
+      redirect_to @album
+    else
+      render :edit
     end
   end
 
@@ -65,6 +69,6 @@ class AlbumsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def album_params
-    params.require(:album).permit(:title, :description, :cover_photo_id)
+    params.require(:album).permit(:title, :description)
   end
 end

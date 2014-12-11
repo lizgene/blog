@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20141202230807) do
   create_table "albums", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "cover_photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,18 +41,12 @@ ActiveRecord::Schema.define(version: 20141202230807) do
 
   create_table "photos", force: true do |t|
     t.integer  "album_id"
-    t.string   "direct_upload_url",                   null: false
-    t.string   "upload_file_name"
-    t.string   "upload_content_type"
-    t.integer  "upload_file_size"
-    t.datetime "upload_updated_at"
-    t.boolean  "processed",           default: false, null: false
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
-  add_index "photos", ["processed"], name: "index_photos_on_processed", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"

@@ -21,9 +21,10 @@ gem 'mandrill-api'
 gem 'will_paginate-bootstrap'
 gem 'aws-sdk'
 gem "jquery-ui-rails"
-gem "paperclip"
 gem "s3_direct_upload"
 gem "mini_magick"
+gem "fog"
+gem "carrierwave"
 
 group :development do
   gem 'pry'
@@ -36,4 +37,4 @@ gem 'rails_12factor', group: :production
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
-ruby "2.1.2"
+ruby "2.1.5"

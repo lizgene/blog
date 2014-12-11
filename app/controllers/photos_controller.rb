@@ -2,39 +2,27 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
-  # GET /photos
   def index
     @photos = Photo.all.order('created_at DESC').page(params[:page]).per_page(10)
   end
 
-  # GET /photos/1
   def show
   end
 
-  # GET /photos/new
+
   def new
     @photo = Photo.new
   end
 
-  # GET /photos/1/edit
+
   def edit
   end
 
-  # POST /photos
   def create
-    params[:photo][:album_id] = params[:album_id] if params[:album_id]
-
-    @photo = Photo.create(photo_params)
-
-    if @photo.save
-      render json: { success: true, message: "success" }
-    else
-      render json: { success: false, message: "fail" }
-    end
-
+    @photo = Photo.new(photo_params)
+    @photo.save
   end
 
-  # PATCH/PUT /photos/1
   def update
     respond_to do |format|
       if @photo.update(photo_params)
@@ -47,7 +35,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  # DELETE /photos/1
   def destroy
     @photo.destroy
     respond_to do |format|

@@ -12,9 +12,8 @@
   
   <div class="row">
     <% @album.photos.each do |photo| %>
-      <div class="col-xs-3">
-        <div class="photo" style="background-image: url('<%= photo.upload(:medium) %>');">
-        </div>
+      <div class="col-xs-6">
+        <%= image_tag photo.image.medium %>
       </div>
     <% end %>
   </div>
