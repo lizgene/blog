@@ -15,7 +15,6 @@ gem 'autoprefixer-rails' #used with bootstrap-sass to add vendor prefixes automa
 gem "font-awesome-rails"
 gem 'picasa', '~> 0.7.2'
 gem "omniauth-google-oauth2"
-gem 'dotenv-rails', :groups => [:development, :test] #lets me use .env file to store api keys. production stored on heroku.
 gem 'delayed_job_active_record'
 gem 'mandrill-api'
 gem 'will_paginate-bootstrap'
@@ -25,11 +24,17 @@ gem "s3_direct_upload"
 gem "mini_magick"
 gem "fog"
 gem "carrierwave"
+gem 'dotenv'
+gem 'dotenv-deployment', require: 'dotenv/deployment'
 
 group :development do
   gem 'pry'
   gem 'pry-remote'
   gem 'spring'
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler', '~> 1.1.3'
 end
 
 gem 'rails_12factor', group: :production
