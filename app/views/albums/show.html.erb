@@ -11,9 +11,9 @@
 
   
   <div class="row">
-    <% @album.photos.each do |photo| %>
+    <% @album.photos.each_with_index do |photo, index| %>
       <div class="col-xs-6">
-        <%= image_tag photo.image.medium %>
+        <img class="photo" src="<%= photo.image.medium %>" data-toggle="modal" data-target="#myModal" data-image-large="<%= photo.image.large %>" data-index="<%= index %>"/>
       </div>
     <% end %>
   </div>
@@ -23,3 +23,20 @@
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_album_path(@album) %>
 <% end %>
+
+<!-- Modal -->
+<div class="modal image-lightbox-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </div>
+      <div class="modal-body text-center center-block">
+        <%= image_tag @album.photos.first.image.large, id: "lightbox-image", class: "img-responsive" %>
+
+        <button type="button" id="next-photo" data-index="0" class="next-right"><i class="fa fa-angle-right"></i></button>
+      </div>
+
+    </div>
+  </div>
+</div>
