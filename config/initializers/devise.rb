@@ -234,7 +234,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   require "omniauth-google-oauth2"
 
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'http://picasaweb.google.com/data/, https://www.googleapis.com/auth/userinfo.email'
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'http://picasaweb.google.com/data/, https://www.googleapis.com/auth/userinfo.email, http://maps.google.com/maps/feeds/'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
