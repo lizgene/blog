@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:google_oauth2]
 
   has_many :posts
+  has_many :checkpoints
+  has_many :trips, :through => :checkpoints
 
 
   #devise oauth reference - https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview

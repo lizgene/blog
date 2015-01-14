@@ -26,6 +26,7 @@ gem "fog"
 gem "carrierwave"
 gem 'dotenv'
 gem 'dotenv-deployment', require: 'dotenv/deployment'
+gem 'geocoder'
 
 group :development do
   gem 'pry'

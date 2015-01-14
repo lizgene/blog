@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :subscribers
   resources :albums
   resources :photos
+  resources :trips
+  resources :checkpoints
 
   get '/avatar' => 'user#new_avatar'
 
