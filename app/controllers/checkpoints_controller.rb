@@ -15,8 +15,8 @@ class CheckpointsController < ApplicationController
 
   def create
     #street address can override ip address if you want to manually input a checkpoint
-    # params[:checkpoint].delete("ip_address") if params[:checkpoint][:street_address].present?
-    # binding.remote_pry
+    params[:checkpoint].delete("ip_address") if params[:checkpoint][:street_address].present?
+
     @checkpoint = Checkpoint.new(checkpoint_params)
 
     respond_to do |format|
