@@ -1,6 +1,5 @@
 class TripsController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   # GET /trips
   def index
