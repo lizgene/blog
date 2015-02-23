@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style type="text/css">
-      html, body, #map-canvas { height: 500px; width: 90vw; margin: 0; padding: 0; overflow: hidden;}
-    </style>
+
     <!-- <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=<%#=ENV['GOOGLE_BROWSER_API_KEY']%>">
     </script> -->
-    <script type="text/javascript">
-      function initialize() {
-        var sanFrancisco = new google.maps.LatLng(37.7670058,-122.4218845)
-        var mapOptions = {
-          center: sanFrancisco,
-          zoom: 12
-        };
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
+     <script type="text/javascript">
+    //   function initialize() {
+    //     var sanFrancisco = new google.maps.LatLng(37.7670058,-122.4218845)
+    //     var mapOptions = {
+    //       center: sanFrancisco,
+    //       zoom: 12
+    //     };
+    //     var map = new google.maps.Map(document.getElementById('map-canvas'),
+    //         mapOptions);
       
-        var marker = new google.maps.Marker({
-          position: sanFrancisco,
-          map: map,
-          title:"We shall begin at the beginning!"
-        });
+    //     var marker = new google.maps.Marker({
+    //       position: sanFrancisco,
+    //       map: map,
+    //       title:"We shall begin at the beginning!"
+    //     });
 
-        var flightPlanCoordinates = [
-          new google.maps.LatLng(37.7670058,-122.4218845),
-          new google.maps.LatLng(39.5579311,-119.8508414),
-          new google.maps.LatLng(35.9584634,-83.9250825),
-          new google.maps.LatLng(41.082613,-85.1509)
-        ];
-        var flightPath = new google.maps.Polyline({
-          path: flightPlanCoordinates,
-          geodesic: true,
-          strokeColor: '#FF0000',
-          strokeOpacity: 1.0,
-          strokeWeight: 2
-        });
+    //     var flightPlanCoordinates = [
+    //       new google.maps.LatLng(37.7670058,-122.4218845),
+    //       new google.maps.LatLng(39.5579311,-119.8508414),
+    //       new google.maps.LatLng(35.9584634,-83.9250825),
+    //       new google.maps.LatLng(41.082613,-85.1509)
+    //     ];
+    //     var flightPath = new google.maps.Polyline({
+    //       path: flightPlanCoordinates,
+    //       geodesic: true,
+    //       strokeColor: '#FF0000',
+    //       strokeOpacity: 1.0,
+    //       strokeWeight: 2
+    //     });
 
-        flightPath.setMap(map);
-      }
+    //     flightPath.setMap(map);
+    //   }
 
-      function loadScript() {
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = "http://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_BROWSER_API_KEY']%>&callback=initialize";
-        document.body.appendChild(script);
-      }
-      window.onload = loadScript();
+    //   function loadScript() {
+    //     var script = document.createElement('script');
+    //     script.type = 'text/javascript';
+    //     script.src = "http://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_BROWSER_API_KEY']%>&callback=initialize";
+    //     document.body.appendChild(script);
+    //   }
+    //   window.onload = loadScript();
     </script>
   </head>
   <body>
     <div class="row">
       <div class="text-center center-block col-sm-6">
-        <div id="map-canvas"></div>
+        <img src="/assets/chiangmaimap.png" class="img-responsive"/>
+        <!-- <div id="map-canvas"></div> -->
       </div>
     </div>
   </body>
