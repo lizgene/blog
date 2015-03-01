@@ -1,15 +1,26 @@
 <%= form_for @album, :html => {:multipart => true} do |f| %>
 
   <%= f.label :title, :class => 'control-label' %>
-  
-    <%= f.text_field :title, :class => 'text_field' %>
+  <%= f.text_field :title, :class => 'text_field' %>
   
   <%= f.label :description, :class => 'control-label' %>
-  
-    <%= f.text_field :description, :class => 'text_field' %>
+  <%= f.text_field :description, :class => 'text_field' %>
 
   <%= file_field_tag "images[]", type: :file, multiple: true %>
+
+  
+  <%= f.fields_for :photos do |p| %>
+    <div class="col-sm-3">
+      <img class="photo" src="<%= p.object.image.small %>" />
+
+      <label> 
+        <%= p.check_box :_destroy %>
+        Remove photo 
+      </label>
+    </div>
+  <% end %>
   
   <%= f.submit "submit", :class => "btn btn-default" %>
 
 <% end %>
+

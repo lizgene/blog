@@ -38,7 +38,7 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    if @album.update(params[:album].permit(:title,:description))
+    if @album.update(album_params)
       # to handle multiple images upload on update when user add more picture
       if params[:images]
         params[:images].each { |image|
@@ -69,6 +69,6 @@ class AlbumsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def album_params
-    params.require(:album).permit(:title, :description)
+    params.require(:album).permit(:id, :title, :description, :created_at, :updated_at, photos_attributes: [ :album_id, :image, :id, :created_at, :updated_at, :_destroy ])
   end
 end
