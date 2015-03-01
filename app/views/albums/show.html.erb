@@ -12,8 +12,8 @@
   
   <div class="row">
     <% @album.photos.each_with_index do |photo, index| %>
-      <div class="col-xs-6">
-        <img class="photo" src="<%= photo.image.medium %>" data-toggle="modal" data-target="#myModal" data-image-large="<%= photo.image.large %>" data-index="<%= index %>"/>
+      <div class="col-sm-3">
+        <img class="photo" src="<%= photo.image.small %>" data-toggle="modal" data-target="#myModal" data-image-large="<%= photo.image.large %>" data-index="<%= index %>"/>
       </div>
     <% end %>
   </div>
