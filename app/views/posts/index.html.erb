@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <%= link_to post_url(post) do %>
       <div class="pin col-xs-12 col-sm-6">
-        <div class="preview-image" style="background-image: url(<%= image_url "bay-bridge.jpg" %>)"><h2><%= post.title %></h2><p><%= post.created_at.strftime("%d %B %Y") %></p></div>
+        <div class="preview-image" style="background-image: url(<%= image_url post.cover_photo_url %>)"><h2><%= post.title %></h2><p><%= post.created_at.strftime("%d %B %Y") %></p></div>
         <p>
           <%=strip_tags post.body %>
         </p>
