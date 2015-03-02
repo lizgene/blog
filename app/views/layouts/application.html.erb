@@ -5,7 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta charset="UTF-8">
   <title><% if @post && @post.title %><%= @post.title %><% else %>Ginger and the Cyclist<% end %> - Liz Hubertz and Nathan Arnold Travel Blog</title>
-  <meta name="description=" content="<% if @post && @post.body %><%=truncate((strip_tags @post.body), length: 200) %><% else %>Follow Liz and Nathan as they travel the globe in search of exceptional coffee and coding prowess.<% end %>" >
+ 
+  <% if @post %>
+    <% description = truncate((strip_tags @post.body), length: 200) %>
+  <% elsif @album %>
+    <% description = truncate((strip_tags @album.description), length: 200) %>
+  <% else %>
+    <% description = "Follow Liz and Nathan as they travel the globe in search of exceptional coffee and coding prowess." %>
+  <% end %>
+
+  <meta name="description=" content="<%= description %>" >
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
