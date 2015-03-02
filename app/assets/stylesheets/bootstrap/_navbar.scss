@@ -31,6 +31,15 @@ header {
 
     > li:first-child a:hover { border-bottom: 2px solid $brand-info; }
     > li:nth-child(2) a:hover { border-bottom: 2px solid $brand-primary; }
-    > li:nth-child(3) a:hover { border-bottom: 2px solid $brand-danger; }
-    > li:nth-child(4) a:hover { border-bottom: 2px solid $brand-warning; }
+    > li:nth-child(4) a:hover { border-bottom: 2px solid $brand-danger; }
+    > li:nth-child(5) a:hover { border-bottom: 2px solid $brand-warning; }
+}
+
+.navbar-link {
+  min-width: 45px;
+}
+
+.navbar-logo {
+  height: 2em;
+  margin-top: -5px;
 }

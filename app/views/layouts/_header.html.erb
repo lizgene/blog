@@ -20,8 +20,9 @@
             <% end %>
               <li><%= link_to "About", about_path, :class => 'navbar-link'  %></li>
               <li><%= link_to "Blog", posts_path, :class => 'navbar-link'  %></li>
+              <li><%= link_to image_tag('logo-gray.png', class: "navbar-logo"), root_path, :class => 'navbar-link hidden-xs' %></li>
               <li><%= link_to "Photos", albums_path, :class => 'navbar-link'  %></li>
-              <li><%= link_to "Where Are Liz & Nathan?", trips_path, :class => 'navbar-link'  %></li>
+              <li><%= link_to "Map", trips_path, :class => 'navbar-link'  %></li>
           </ul>
         </div>
           
