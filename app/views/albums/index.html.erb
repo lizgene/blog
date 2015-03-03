@@ -4,7 +4,7 @@
       <div class="pin col-xs-12 col-sm-6">
         <div class="preview-image" style="background-image: url(<%= image_url album.cover_photo_url %>)"><h2><%= album.title %></h2><p><%= album.created_at.strftime("%d %B %Y") %></p></div>
         <p>
-          <%= album.description %>
+          <%=strip_tags album.description %>
         </p>
       </div>
     <% end %>
