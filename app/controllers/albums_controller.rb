@@ -64,11 +64,11 @@ class AlbumsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_album
-    @album = Album.find(params[:id])
+    @album = Album.find_by_slug(params[:id]) || Album.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def album_params
-    params.require(:album).permit(:id, :title, :description, :created_at, :updated_at, photos_attributes: [ :album_id, :image, :id, :created_at, :updated_at, :_destroy ])
+    params.require(:album).permit(:id, :title, :slug, :description, :created_at, :updated_at, photos_attributes: [ :album_id, :image, :id, :created_at, :updated_at, :_destroy ])
   end
 end
