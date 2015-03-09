@@ -7,7 +7,7 @@ class Album < ActiveRecord::Base
   before_validation :set_slug, :on => :create
 
   def set_slug
-    self.slug = self.title.downcase.gsub(" ", "-")
+    self.slug = self.title.parameterize 
   end
 
   def to_param
