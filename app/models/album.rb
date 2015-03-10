@@ -1,10 +1,11 @@
 class Album < ActiveRecord::Base
   has_many :photos, :inverse_of => :album
   accepts_nested_attributes_for :photos, allow_destroy: true
-  validates_presence_of :slug
-
+  validates_presence_of :title
+  
+  before_create :set_slug
   before_destroy :destroy_photos
-  before_validation :set_slug, :on => :create
+
 
   def set_slug
     self.slug = self.title.parameterize 

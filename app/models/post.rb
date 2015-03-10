@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  validates_presence_of :slug
-  before_validation :set_slug, on: :create
+  validates_presence_of :title
+  before_create :set_slug
 
   def set_slug
     self.slug = self.title.parameterize 

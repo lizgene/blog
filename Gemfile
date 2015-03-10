@@ -39,10 +39,10 @@ group :development do
 end
 
 group :development, :test do
-  #Include dependent RSpec Repos to run tests against the master branch
-  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
-    gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
-  end
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'database_cleaner'
 end
 
 gem 'rails_12factor', group: :production
