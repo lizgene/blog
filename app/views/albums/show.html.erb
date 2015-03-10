@@ -1,3 +1,6 @@
+<% content_for :title do %><%= @album.title %><% end %>
+<% content_for :description do %><%= truncate((strip_tags @album.description), length: 100) %><% end %>
+
 <div class="row" id="albums">
 
   <div class="col-sm-12 header text-center">
