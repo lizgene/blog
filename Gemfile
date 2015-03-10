@@ -38,6 +38,13 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1.3'
 end
 
+group :development, :test do
+  #Include dependent RSpec Repos to run tests against the master branch
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
+end
+
 gem 'rails_12factor', group: :production
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
