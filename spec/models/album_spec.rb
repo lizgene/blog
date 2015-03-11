@@ -13,4 +13,13 @@ RSpec.describe Album, type: :model do
     album = FactoryGirl.create(:album)
     expect(album.slug).to eq(album.title.parameterize)
   end
+
+  it "successfully creates an album without photos" do
+    expect(create(:album).photos.length).to eq(0)
+  end
+
+  it "successfully creates an album with photos" do
+    expect(create(:album_with_photos, photos_count: 7).photos.length).to eq(7)
+  end
+
 end
