@@ -11,30 +11,30 @@ body {
   }
   -webkit-font-smoothing: antialiased;
   line-height: 1.4em;
+
+  #pretzel-video {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+    @media(max-width: 1250px) {
+      height: 100%;
+      width: auto;
+    }
+  } 
+  video {
+    display: inline-block;
+    object-fit: contain;
+  }
   .homepage-hero {
     display: block;
     height: 90vh;
     position: relative !important;
-    background-image: url(<%= asset_path 'thailand-cover.jpg' %>);
-    background-attachment: fixed;
     transition: all 200ms;
     padding: 0;
     color: white;
     text-align: center;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    &:before {
-      content: "";
-      display:  block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      pointer-events: none;
-      background: rgba(0,0,0,0.5);
-    }
   }
   .homepage-hero-container {
     display: table;
