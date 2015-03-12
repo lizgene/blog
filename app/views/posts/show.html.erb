@@ -4,7 +4,6 @@
 <div class="row">
 
   <div class="col-sm-12 header">
-    <%= link_to raw('&#x2190; Back to all posts'), posts_path, class: "back" %>
     <h1><%= @post.title %></h1>
     <p class="date"><%= @post.created_at.strftime("%d %B %Y") %></p>
   </div>
@@ -13,6 +12,9 @@
     <%= simple_format @post.body %>
   </div>
 
+  <div class="col-sm-12 text-center">
+    <%= link_to raw('&#x2190; Back to all posts'), posts_path, class: "back" %>
+  </div>
 </div>
 
 <% if user_signed_in? %>

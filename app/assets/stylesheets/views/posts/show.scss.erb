@@ -1,21 +1,36 @@
 @import "bootstrap/variables";
 
-h1 {
-  font-size: 18px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.header {
-  .date {
-    font-size: 12px;
+#posts {
+  h1 {
+    font-size: 18px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
   }
-}
+  .header {
+    .date {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
 
-.body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  .body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  p {
+    margin: 0 15% 1.5em;
+    line-height: 1.75em;
+  }
+
+  @media(max-width : $max-tablet-width)  { 
+    p {
+      margin: 0 0 1.5em 0;
+    }
+  }
 }
