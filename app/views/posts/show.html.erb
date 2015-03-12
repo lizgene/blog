@@ -13,10 +13,9 @@
   </div>
 
   <div class="col-sm-12 text-center">
-    <%= link_to raw('&#x2190; Back to all posts'), posts_path, class: "back" %>
+    <%= link_to raw('&#x2190; Back to all posts'), posts_path, class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+      <%= link_to 'Edit Post', edit_post_path(@post), class: "btn btn-success" %>
+    <% end %>
   </div>
 </div>
-
-<% if user_signed_in? %>
-  <%= link_to 'Edit', edit_post_path(@post) %>
-<% end %>

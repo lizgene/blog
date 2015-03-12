@@ -25,8 +25,9 @@
       <%= f.label :cover_photo_url %><br>
       <%= f.text_field :cover_photo_url, class: "form-control" %>
     </div>
-    <div class="actions form-group">
-      <%= f.submit "Save", class: "btn btn-primary center-block" %>
+    <div class="actions form-group text-center">
+      <%= link_to 'Back', @post, class: "btn btn-default" %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
