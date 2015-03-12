@@ -19,18 +19,20 @@
 
   <script type="text/javascript">
 
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: {id: 'my-map'}}, function(){
-      var markers = handler.addMarkers([
-        { lat: 7.6556, lng: 99.0419}, //koh lanta
-        { lat: 18.7953, lng: 98.9986}, //bangkok
-        { lat: 13.7563, lng: 100.5018}, //chiang mai
-        { lat: 19.3589, lng: 98.4367}, //pai
-        { lat: 8.0592, lng: 98.9189}, //krabi
-        { lat: 18.59344, lng: 98.57423 } //keelek
-      ]);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
+    $(document).ready(function(){
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: {id: 'my-map'}}, function(){
+        var markers = handler.addMarkers([
+          { lat: 7.6556, lng: 99.0419}, //koh lanta
+          { lat: 18.7953, lng: 98.9986}, //bangkok
+          { lat: 13.7563, lng: 100.5018}, //chiang mai
+          { lat: 19.3589, lng: 98.4367}, //pai
+          { lat: 8.0592, lng: 98.9189}, //krabi
+          { lat: 18.59344, lng: 98.57423 } //keelek
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
     });
     
 
