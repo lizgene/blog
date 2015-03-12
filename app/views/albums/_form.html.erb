@@ -1,26 +1,43 @@
 <%= form_for @album, :html => {:multipart => true} do |f| %>
 
-  <%= f.label :title, :class => 'control-label' %>
-  <%= f.text_field :title, :class => 'text_field' %>
-  
-  <%= f.label :description, :class => 'control-label' %>
-  <%= f.text_field :description, :class => 'text_field' %>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="form-group">
+        <%= f.label :title, class: 'control-label' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :description, class: 'control-label' %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
 
-  <%= file_field_tag "images[]", type: :file, multiple: true %>
+      <div class="form-group">
+        <%= label_tag "Choose Images" %>
+        <%= file_field_tag "images[]", type: :file, multiple: true %>
+      </div>
 
-  
-  <%= f.fields_for :photos do |p| %>
-    <div class="col-sm-3">
-      <img class="photo" src="<%= p.object.image.small %>" />
-
-      <label> 
-        <%= p.check_box :_destroy %>
-        Remove photo 
-      </label>
+      <div class="form-group">
+        <%= link_to 'Cancel', @album, class: "btn btn-default" %>
+        <%= f.submit "Save", :class => "btn btn-success" %>
+      </div>
     </div>
-  <% end %>
+  </div>
+
   
-  <%= f.submit "submit", :class => "btn btn-default" %>
+  <div class="form-group">
+    <%= f.fields_for :photos do |p| %>
+      <div class="col-sm-3">
+        <img class="photo" src="<%= p.object.image.small %>" />
+
+        <label class="checkbox text-center"> 
+          <%= p.check_box :_destroy %>
+          Remove photo 
+        </label>
+      </div>
+    <% end %>
+  </div>
+  
 
 <% end %>
 

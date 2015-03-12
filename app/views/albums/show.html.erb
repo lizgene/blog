@@ -13,7 +13,7 @@
   </div>
 
   
-  <div class="row">
+  <div class="col-sm-12">
     <% @album.photos.each_with_index do |photo, index| %>
       <div class="col-sm-3">
         <img class="photo center-block" src="<%= photo.image.small %>" data-toggle="modal" data-target="#myModal" data-image-large="<%= photo.image.large %>" data-index="<%= index %>"/>
@@ -21,11 +21,12 @@
     <% end %>
   </div>
 
+  <% if user_signed_in? %>
+    <div class="col-sm-12 text-center">
+      <%= link_to 'Edit Album', edit_album_path(@album) , class: "btn btn-success" %>
+    </div>
+  <% end %>
 </div>
-
-<% if user_signed_in? %>
-  <%= link_to 'Edit', edit_album_path(@album) %>
-<% end %>
 
 <!-- Modal -->
 <div class="modal image-lightbox-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
