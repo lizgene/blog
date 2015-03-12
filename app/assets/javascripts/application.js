@@ -16,4 +16,6 @@
 //= require turbolinks
 //= require jquery-ui
 //= require s3_direct_upload
+//= require underscore
+//= require gmaps/google
 //= require_tree .

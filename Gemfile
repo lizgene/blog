@@ -27,6 +27,8 @@ gem "carrierwave"
 gem 'dotenv'
 gem 'dotenv-deployment', require: 'dotenv/deployment'
 gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development do
   gem 'pry'
