@@ -47,7 +47,6 @@ body {
     height: 100%;
     position: relative;
     z-index: 10;
-    overflow-x: hidden;
   }
   .homepage-hero-content {
     display: table-cell;
@@ -73,6 +72,30 @@ body {
     padding: 10px 0 25px;
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
+  }
+
+  @media(max-width: $max-phone-width){
+    #pretzel-video, .video-container, video {
+      display: none;
+    }
+    .homepage-hero {
+      background-image: url(<%= asset_path 'thailand-cover.jpg' %>);
+      background-attachment: fixed;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:before {
+        content: "";
+        display:  block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        background: rgba(0,0,0,0.5);
+      }
+    }
   }
 
 
