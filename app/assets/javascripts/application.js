@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require hermitage
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks

@@ -29,6 +29,7 @@ gem 'dotenv-deployment', require: 'dotenv/deployment'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'hermitage'
 
 group :development do
   gem 'pry'
