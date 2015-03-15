@@ -4,7 +4,7 @@ class TripsController < ApplicationController
   # GET /trips
   def index
     @trips = Trip.all.order('created_at DESC').page(params[:page]).per_page(10)
-    @checkpoint = Checkpoint.first
+    @checkpoints = Checkpoint.all
   end
 
   # GET /trips/1
