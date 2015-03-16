@@ -1,0 +1,19 @@
+- content_for :title do
+  | Photo Albums
+- content_for :description do
+  | What have Liz and Nathan been doing with their time? Check out the photos and see!
+
+.row
+  - for album in @albums
+    a href=album_url(album)
+      .pin.col-xs-12.col-sm-6
+        .preview-image style="background-image: url(#{image_url album.cover_photo_url})"
+          h2 = album.title
+          p = album.created_at.strftime("%d %B %Y")
+        p = strip_tags album.description
+
+.row.center-block.text-center
+  = will_paginate @albums, renderer: BootstrapPagination::Rails
+
+- if user_signed_in?
+  a href=new_album_path New Album

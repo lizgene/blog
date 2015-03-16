@@ -1,0 +1,22 @@
+= form_for @album, :html => {:multipart => true} do |f|
+  .row
+    .col-sm-6.col-sm-offset-3
+      .form-group
+        = f.label :title, class: 'control-label'
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :description, class: 'control-label'
+        = f.text_field :description, class: 'form-control'
+      .form-group
+        = label_tag "Choose Images"
+        = file_field_tag "images[]", type: :file, multiple: true
+      .form-group
+        = link_to 'Cancel', @album, class: "btn btn-default"
+        = f.submit "Save", :class => "btn btn-success"
+  .form-group
+    = f.fields_for :photos do |p|
+      .col-sm-3
+        img class="photo" src=p.object.image.small
+        label.checkbox.text-center
+          = p.check_box :_destroy
+          |  Remove photo 

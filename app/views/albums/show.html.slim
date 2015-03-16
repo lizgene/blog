@@ -1,0 +1,16 @@
+- content_for :title do
+  = @album.title
+- content_for :description do
+  = truncate((strip_tags @album.description), length: 100)
+#albums.row
+  .col-sm-12.header.text-center
+    h1
+      = @album.title
+    p.body
+      = simple_format @album.description
+    p.date
+      = @album.created_at.strftime("%d %B %Y")
+  = render_gallery_for @album.photos, list_tag: :div, list_class: 'col-sm-12', item_tag: :p, item_class: 'col-sm-3'
+  - if user_signed_in?
+    .col-sm-12.text-center
+      = link_to 'Edit Album', edit_album_path(@album) , class: "btn btn-success"
