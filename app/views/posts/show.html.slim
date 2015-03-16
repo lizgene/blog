@@ -1,0 +1,18 @@
+= content_for :title do
+  = @post.title
+= content_for :description do 
+  = truncate((strip_tags @post.body), length: 100)
+
+.show
+  .row
+    .col-sm-12.header
+      h1 = @post.title
+      p.date = @post.created_at.strftime("%d %B %Y") 
+
+    .col-sm-12.body
+      = simple_format @post.body
+
+    .col-sm-12.text-center
+      a.btn.btn-primary href=posts_path &#x2190; Back to all posts
+      - if user_signed_in?
+        a.btn.btn-success href=edit_post_path(@post) Edit Post
