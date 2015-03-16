@@ -1,0 +1,2 @@
+#add custom slim options here - for example, this means &:text will create a text field
+Slim::Engine.set_options shortcut: {'&' => {tag: 'input', attr: 'type'}, '#' => {attr: 'id'}, '.' => {attr: 'class'}}

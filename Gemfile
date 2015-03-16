@@ -30,6 +30,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'hermitage'
+gem 'slim' #template engine
 
 group :development do
   gem 'pry'
