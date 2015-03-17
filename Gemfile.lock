@@ -58,6 +58,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    carrierwave_backgrounder (0.4.1)
+      carrierwave (~> 0.5)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -346,6 +348,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.1)
   capistrano-rvm
   carrierwave
+  carrierwave_backgrounder
   coffee-rails (~> 4.0.0)
   database_cleaner
   delayed_job_active_record

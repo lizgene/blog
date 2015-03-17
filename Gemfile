@@ -31,6 +31,7 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'hermitage'
 gem 'slim' #template engine
+gem 'carrierwave_backgrounder'
 
 group :development do
   gem 'pry'
