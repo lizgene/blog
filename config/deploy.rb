@@ -3,6 +3,7 @@ lock '3.2.1'
 
 set :application, 'blog'
 set :repo_url, 'git@github.com:lizhubertz/blog.git'
+set :delayed_job_args, "-n 3"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -42,6 +43,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       execute :touch, release_path.join("tmp/restart.txt")
     end
+    invoke "delayed_job:restart"
   end
 
   after :publishing, :restart

@@ -32,6 +32,7 @@ gem 'underscore-rails'
 gem 'hermitage'
 gem 'slim' #template engine
 gem 'carrierwave_backgrounder'
+gem 'daemons'
 
 group :development do
   gem 'pry'
