@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:lizhubertz/blog.git'
 
 # require 'delayed/recipes'
 # set :delayed_job_command, "bin/delayed_job"
-# set :rails_env, "production" #added for delayed job 
+set :rails_env, "production" #added for delayed job 
 # set :delayed_job_args, "-n 3" 
 
 # after "deploy:stop",    "delayed_job:stop"
@@ -57,7 +57,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       execute :touch, release_path.join("tmp/restart.txt")
     end
-    # invoke "delayed_job:restart"
+    invoke "delayed_job:restart"
   end
 
   after :publishing, :restart
