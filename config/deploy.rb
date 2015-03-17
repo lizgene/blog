@@ -1,12 +1,17 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-require 'delayed/recipes'
-set :delayed_job_command, "bin/delayed_job"
-
 set :application, 'blog'
 set :repo_url, 'git@github.com:lizhubertz/blog.git'
-set :delayed_job_args, "-n 3"
+
+require 'delayed/recipes'
+set :delayed_job_command, "bin/delayed_job"
+set :rails_env, "production" #added for delayed job 
+set :delayed_job_args, "-n 3" 
+
+after "deploy:stop",    "delayed_job:stop"
+after "deploy:start",   "delayed_job:start"
+after "deploy:restart", "delayed_job:restart"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -46,7 +51,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       execute :touch, release_path.join("tmp/restart.txt")
     end
-    invoke "delayed_job:restart"
+    # invoke "delayed_job:restart"
   end
 
   after :publishing, :restart
