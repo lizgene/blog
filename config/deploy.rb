@@ -13,11 +13,11 @@ set :repo_url, 'git@github.com:lizhubertz/blog.git'
 # after "deploy:start",   "delayed_job:start"
 # after "deploy:restart", "delayed_job:restart"
 
-require 'delayed/recipes'
+# require 'delayed/recipes'
 
-after "deploy:start", "delayed_job:start"
-after "deploy:stop", "delayed_job:stop"
-after "deploy:restart", "delayed_job:restart"
+# after "deploy:start", "delayed_job:start"
+# after "deploy:stop", "delayed_job:stop"
+# after "deploy:restart", "delayed_job:restart"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
