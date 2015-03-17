@@ -1,7 +1,8 @@
-require 'delayed/recipes'
-set :delayed_job_command, "bin/delayed_job"
 # config valid only for Capistrano 3.1
 lock '3.2.1'
+
+require 'delayed/recipes'
+set :delayed_job_command, "bin/delayed_job"
 
 set :application, 'blog'
 set :repo_url, 'git@github.com:lizhubertz/blog.git'
