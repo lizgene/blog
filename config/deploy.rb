@@ -4,13 +4,19 @@ lock '3.2.1'
 set :application, 'blog'
 set :repo_url, 'git@github.com:lizhubertz/blog.git'
 
-require 'delayed/recipes'
-set :delayed_job_command, "bin/delayed_job"
-set :rails_env, "production" #added for delayed job 
-set :delayed_job_args, "-n 3" 
+# require 'delayed/recipes'
+# set :delayed_job_command, "bin/delayed_job"
+# set :rails_env, "production" #added for delayed job 
+# set :delayed_job_args, "-n 3" 
 
-after "deploy:stop",    "delayed_job:stop"
-after "deploy:start",   "delayed_job:start"
+# after "deploy:stop",    "delayed_job:stop"
+# after "deploy:start",   "delayed_job:start"
+# after "deploy:restart", "delayed_job:restart"
+
+require 'delayed/recipes'
+
+after "deploy:start", "delayed_job:start"
+after "deploy:stop", "delayed_job:stop"
 after "deploy:restart", "delayed_job:restart"
 
 # Default branch is :master
