@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @posts = Post.limit(4).order('created_at DESC')
+    @posts = Post.last(4)
     render layout: false
   end
 
