@@ -13,6 +13,16 @@
       = simple_format @post.body
 
     .col-sm-12.text-center
+      .map-container
+        #map.map-box
+
+    .col-sm-12.text-center
       a.btn.btn-primary href=posts_path &#x2190; Back to all posts
       - if user_signed_in?
         a.btn.btn-success href=edit_post_path(@post) Edit Post
+
+- unless @checkpoints.blank?
+  javascript:
+    var checkpoints = #{raw @checkpoints.to_json}
+    window.checkpoints = checkpoints;
+    gmap_show(checkpoints);
