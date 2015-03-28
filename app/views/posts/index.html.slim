@@ -10,7 +10,7 @@
         .preview-image style="background-image: url(#{image_url post.cover_photo_url})"
           h2 = post.title
           p = post.created_at.strftime("%d %B %Y")
-        p = strip_tags(post.body)
+        p = truncate(strip_tags(post.body), length: 200)
 
 .row.center-block.text-center
   = will_paginate(@posts, renderer: BootstrapPagination::Rails) 
