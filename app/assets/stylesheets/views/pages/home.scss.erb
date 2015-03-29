@@ -148,31 +148,27 @@ body {
       pointer-events: none;
       background: rgba(0,0,0,0.35);
     }
-    h2 {
+
+    @mixin pin_text {
       color: white;
-      font-size: 18px;
       font-weight: bold;
       position: absolute;
-      bottom: 15px;
       padding-left: 15px;
       padding-right: 15px;
-      white-space:nowrap;
-      text-overflow:ellipsis;
+      text-overflow: ellipsis;
       overflow: hidden;
       width: 100%;
+      white-space: nowrap;
+    }
+    h2 {
+      @include pin_text;
+      font-size: 18px;
+      bottom: 15px;
     }
     p {
-      color: white;
+      @include pin_text;
       font-size: 12px;
-      font-weight: bold;
-      position: absolute;
       bottom: 5px;
-      padding-left: 15px;
-      padding-right: 15px;
-      white-space:nowrap;
-      text-overflow:ellipsis;
-      overflow: hidden;
-      width: 100%;
     }
   }
 
