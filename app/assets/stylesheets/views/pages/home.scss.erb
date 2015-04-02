@@ -149,7 +149,9 @@ body {
       background: rgba(0,0,0,0.35);
     }
 
-    @mixin pin_text {
+    @mixin text_overlay($font-size, $bottom) {
+      font-size: $font-size;
+      bottom: $bottom;
       color: white;
       font-weight: bold;
       position: absolute;
@@ -161,14 +163,10 @@ body {
       white-space: nowrap;
     }
     h2 {
-      @include pin_text;
-      font-size: 18px;
-      bottom: 15px;
+      @include text_overlay(18px, 15px);
     }
     p {
-      @include pin_text;
-      font-size: 12px;
-      bottom: 5px;
+      @include text_overlay(12px, 5px);
     }
   }
 
