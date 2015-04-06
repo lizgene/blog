@@ -18,12 +18,21 @@
           #map.map-box
 
     .col-sm-12.text-center
-      a.btn.btn-primary href=posts_path &#x2190; Back to all posts
+      button.btn.btn-default.btn-circle.btn-xl type="button" data-toggle="popover" data-content="<ul class='list-unstyled share-this'><li><a href=''><i class='fa fa-facebook'></i> <span>Share on Facebook</span></a></li> <li><a href=''><i class='fa fa-twitter'></i> <span>Share on Twitter</span></a></li> <li><a href=''><i class='fa fa-envelope-o'></i> <span>Share via Email</span></a></li></ul>" data-placement="top" data-container="body" data-html="true"
+        i.fa.fa-envelope-o
+
+    .col-sm-12
       - if user_signed_in?
         a.btn.btn-success href=edit_post_path(@post) Edit Post
+
+
+script async="" data-pin-color="red" data-pin-height="32" data-pin-shape="round" data-pin-hover="true" defer="" src="//assets.pinterest.com/js/pinit.js" type="text/javascript" 
+
 
 - unless @checkpoints.blank?
   javascript:
     var checkpoints = #{raw @checkpoints.to_json}
     window.checkpoints = checkpoints;
     gmap_show(checkpoints);
+
+
