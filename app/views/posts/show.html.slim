@@ -18,7 +18,24 @@
           #map.map-box
 
     .col-sm-12.text-center
-      button.btn.btn-default.btn-circle.btn-xl type="button" data-toggle="popover" data-content="<ul class='list-unstyled share-this'><li><a href='#{facebook_share_url(@post)}' target='_blank'><i class='fa fa-facebook'></i> <span>Share on Facebook</span></a></li> <li><a href='#{twitter_share_url(@post)}' target='_blank'><i class='fa fa-twitter'></i> <span>Share on Twitter</span></a></li> <li><a href=''><i class='fa fa-envelope-o'></i> <span>Share via Email</span></a></li></ul>" data-placement="top" data-container="body" data-html="true"
+      button.btn.btn-default.btn-circle.btn-xl.share-popover type="button" data-toggle="popover" data-placement="top" data-container="body" data-html="true" data-content="
+        <ul class='list-unstyled share-this'>
+          <li>
+            <a href='#{facebook_share_url(@post)}' target='_blank'>
+              <i class='fa fa-facebook'></i><span>Share on Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href='#{twitter_share_url(@post)}' target='_blank'>
+              <i class='fa fa-twitter'></i><span>Share on Twitter</span>
+            </a>
+          </li>
+          <li>
+            <a role='button' data-toggle='modal' data-target='#emailModal'>
+              <i class='fa fa-envelope-o'></i> <span>Share via Email</span>
+            </a>
+          </li>
+        </ul>"
         i.fa.fa-envelope-o
 
     .col-sm-12
@@ -34,3 +51,22 @@ script async="" data-pin-color="red" data-pin-height="32" data-pin-shape="round"
     var checkpoints = #{raw @checkpoints.to_json}
     window.checkpoints = checkpoints;
     gmap_show(checkpoints);
+
+
+#emailModal class="modal fade" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" aria-label="Close" type="button"
+          span aria-hidden="true"
+            | &times;
+        h4#emailModalLabel class="modal-title"
+          |Share this post via email 
+
+      .modal-body
+        | This is coming soon, mom! I love you!
+      .modal-footer
+        button.btn.btn-default type="button" data-dismiss="modal"
+          | Cancel
+        button.btn.btn-primary
+          | Send
