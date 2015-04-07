@@ -18,7 +18,7 @@
           #map.map-box
 
     .col-sm-12.text-center
-      button.btn.btn-default.btn-circle.btn-xl type="button" data-toggle="popover" data-placement="top" data-container="body" data-html="true" data-content="
+      button.btn.btn-default.btn-circle.btn-xl.share-popover type="button" data-toggle="popover" data-placement="top" data-container="body" data-html="true" data-content="
         <ul class='list-unstyled share-this'>
           <li>
             <a href='#{facebook_share_url(@post)}' target='_blank'>
@@ -51,10 +51,6 @@ script async="" data-pin-color="red" data-pin-height="32" data-pin-shape="round"
     var checkpoints = #{raw @checkpoints.to_json}
     window.checkpoints = checkpoints;
     gmap_show(checkpoints);
-
-javascript:
-  $('[data-toggle="tooltip"]').tooltip();
-  $('[data-toggle="popover"]').popover()
 
 
 #emailModal class="modal fade" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true"
