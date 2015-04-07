@@ -14,7 +14,6 @@
 //= require hermitage
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-ui
 //= require s3_direct_upload
 //= require underscore
