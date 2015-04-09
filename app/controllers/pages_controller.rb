@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @posts = Post.last(4)
+    @posts = Post.last(4).reverse
     render layout: false
   end
 
