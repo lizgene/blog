@@ -1,4 +1,4 @@
-<%= form_tag(controller: "posts", action: "email_post", method: "post") do %>
+<%= form_tag("email_post", method: "post", remote: true, id: "email_post") do %>
   <%= hidden_field_tag :id, @post.id %>
 
   <div class="field form-group">
@@ -14,7 +14,7 @@
 
   <div class="field form-group">
     <%= label_tag :message, "Your Message" %>
-    <%= text_area_tag :message, "Read their post '#{@post.title}' here - #{post_url(@post)}", cols: 45, rows: 8, class: "form-control" %>
+    <%= text_area_tag :message, "Read Liz and Nathan's post '#{@post.title}' here - #{post_url(@post)}", cols: 45, rows: 8, class: "form-control" %>
   </div>
 
   <div class="center-block form-group">

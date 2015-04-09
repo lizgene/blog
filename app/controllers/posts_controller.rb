@@ -68,15 +68,15 @@ class PostsController < ApplicationController
     to_emails.reject!{ |email| email.empty? }
 
     from_email = params[:from]
-    message = params[:message]
+    message = params[:message].gsub("\n", "<br />").html_safe
 
     to_emails.each {|email|
       VisitorMailer.share(email, from_email, message).deliver
     }
 
-    flash[:notice] = "We sent your message - thanks for sharing!"
     respond_to do |format|
-      format.html { redirect_to @post }
+      format.html { redirect_to @post, notice: "We sent your message - thanks for sharing!" }
+      format.js { flash.now[:notice] = "We sent your message - thanks for sharing!" }
     end
 
   end

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/test' => 'pages#test'
 
   #Posts
-  post '/email_post' => 'posts#email_post'
+  post 'posts/email_post' => 'posts#email_post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
