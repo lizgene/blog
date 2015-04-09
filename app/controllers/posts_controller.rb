@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :email_post]
 
   # GET /posts
   # GET /posts.json
@@ -61,6 +61,24 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def email_post
+    to_emails = params[:to].split(%r{[,\n]+}).collect{|email| email.strip }.uniq
+    to_emails.reject!{ |email| email.empty? }
+
+    from_email = params[:from]
+    message = params[:message]
+
+    to_emails.each {|email|
+      VisitorMailer.share(email, from_email, message).deliver
+    }
+
+    flash[:notice] = "We sent your message - thanks for sharing!"
+    respond_to do |format|
+      format.html { redirect_to @post }
+    end
+
   end
 
   private

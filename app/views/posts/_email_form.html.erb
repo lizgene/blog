@@ -1,0 +1,16 @@
+<%= form_tag(controller: "posts", action: "email_post", method: "post") do %>
+  <%= hidden_field_tag :id, @post.id %>
+
+  <%= label_tag :from, "From (your email)" %>
+  <%= text_field_tag :from, "", :size => "40", class: "form-control" %>
+
+  <%= label_tag :to, "To" %>
+  <%= text_area_tag :to, "", cols: 45, rows: 3, class: "form-control" %>
+  <em>Enter multiple emails by separating them by a comma.</em>
+  <em>Example: liz@lizhubertz.com, nathan@lizhubertz.com</em>
+
+  <%= label_tag :message, "Your Message" %>
+  <%= text_area_tag :message, "Here's the link to their post - #{post_url(@post)}", cols: 45, rows: 8, class: "form-control" %>
+
+  <%= submit_tag "Send Email", class: "btn btn-success" %>
+<% end %>
