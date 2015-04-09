@@ -1,6 +1,7 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  impressionist :actions=>[:show]
 
   # GET /albums
   def index

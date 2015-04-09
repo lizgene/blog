@@ -34,6 +34,7 @@ gem 'slim' #template engine
 gem 'carrierwave_backgrounder'
 gem 'daemons'
 gem 'capistrano3-delayed-job', '~> 1.0'
+gem 'impressionist' #stats tracking
 
 group :development do
   gem 'pry'
