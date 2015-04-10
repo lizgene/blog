@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :title
   before_create :set_slug
   has_many :checkpoints
+  is_impressionable
 
   def set_slug
     self.slug = self.title.parameterize 

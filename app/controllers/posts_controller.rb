@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    log_impression
     @checkpoints = @post.checkpoints
   end
 
@@ -83,6 +84,9 @@ class PostsController < ApplicationController
   end
 
   private
+    def log_impression
+      impressionist(@post) 
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find_by_slug(params[:id]) || Post.find(params[:id])
