@@ -5,6 +5,7 @@ class Album < ActiveRecord::Base
   
   before_create :set_slug
   before_destroy :destroy_photos
+  is_impressionable
 
 
   def set_slug

@@ -1,7 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :destroy]
   before_action :set_album, only: [:show, :edit, :update, :destroy]
-  impressionist :actions=>[:show]
 
   # GET /albums
   def index
@@ -10,6 +9,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1
   def show
+    log_impression
   end
 
   # GET /albums/new
@@ -63,6 +63,9 @@ class AlbumsController < ApplicationController
   end
 
   private
+  def log_impression
+    impressionist(@album) 
+  end
   # Use callbacks to share common setup or constraints between actions.
   def set_album
     @album = Album.find_by_slug(params[:id]) || Album.find(params[:id])
