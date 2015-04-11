@@ -5,6 +5,8 @@ class AlbumsController < ApplicationController
   # GET /albums
   def index
     @albums = Album.all.order('created_at DESC').page(params[:page]).per_page(10)
+    @top_posts = Post.top(5)
+    @top_albums = Album.top(5)
   end
 
   # GET /albums/1

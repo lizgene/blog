@@ -4,13 +4,18 @@
 	| Dispatches from the field. Mostly written by Liz; sometimes written by Nathan.
 
 .row
-  - for post in @posts
-    a href=post_url(post)
-      .pin.col-xs-12.col-sm-6
-        .preview-image style="background-image: url(#{image_url post.cover_photo_url})"
-          h2 = post.title
-          p = post.created_at.strftime("%d %B %Y")
-        p = truncate(strip_tags(post.body), length: 200)
+
+  .col-sm-2.hidden-xs style="position: fixed;"
+    = render partial: "layouts/top_content_sidebar", :locals => {:top_posts => @top_posts, :top_albums => @top_albums}
+
+  .col-sm-9.col-sm-offset-3
+    - for post in @posts
+      a href=post_url(post)
+        .pin.col-xs-12.col-sm-6
+          .preview-image style="background-image: url(#{image_url post.cover_photo_url})"
+            h2 = post.title
+            p = post.created_at.strftime("%d %B %Y")
+          p = truncate(strip_tags(post.body), length: 200)
 
 .row.center-block.text-center
   = will_paginate(@posts, renderer: BootstrapPagination::Rails) 

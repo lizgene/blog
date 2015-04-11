@@ -15,7 +15,7 @@ $gray-light:             lighten(#444444, 46.7%) !default; // #777
 $gray-lighter:           #eee !default; // #eee
 
 $brand-primary:         #609F80 !default; // teal
-$brand-success:         #8D9876 !default; // pea green
+$brand-success:         #7bb38e !default; // pea green
 $brand-info:            #CBB345 !default; // dandelion
 $brand-warning:         #4B574D !default; // navy blue
 $brand-danger:          #AF420A !default; // deep red
@@ -49,9 +49,11 @@ $input-background-focus: lighten(#444444, 100%);
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-danger !default;
+$link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 13.5%) !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-hover-decoration: underline !default;
 
 //== Typography
 //
