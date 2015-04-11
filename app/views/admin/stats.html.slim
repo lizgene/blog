@@ -1,0 +1,24 @@
+- unless @posts.empty?
+h2
+ | Top 5 Posts
+table.table
+  tr 
+  	th Title
+  	th Impressions
+  - for post in @posts
+    tr
+      td.title = link_to(post.title, posts_path(post))
+      td.impressions = post.impressions_count
+
+
+- unless @albums.empty?
+h2
+ | Top 5 Albums
+table.table
+  tr 
+  	th Title
+  	th Impressions
+  - for album in @albums
+    tr
+      td.title = link_to(album.title, album_path(album))
+      td.impressions = album.impressions_count

@@ -5,15 +5,17 @@ Rails.application.routes.draw do
   }
   root 'pages#home' 
 
+  resources :albums
+  resources :checkpoints
+  resources :photos
   resources :posts
   resources :subscribers
-  resources :albums
-  resources :photos
   resources :trips
-  resources :checkpoints
 
   get '/avatar' => 'user#new_avatar'
 
+  #Admin 
+  get '/stats' => 'admin#stats', as: :stats
 
   # Pages
   get '/about' => 'pages#about', as: :about

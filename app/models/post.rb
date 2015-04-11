@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  include ImpressionableExtension 
+
   belongs_to :user
   validates_presence_of :title
   before_create :set_slug
@@ -12,4 +14,5 @@ class Post < ActiveRecord::Base
   def to_param
     slug
   end
+
 end
