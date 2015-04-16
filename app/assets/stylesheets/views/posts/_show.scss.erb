@@ -1,19 +1,19 @@
-#posts {
+#posts .show {
   .map-container {
-    width: 100%; 
+    // width: 100%; 
     overflow: hidden;
-    margin-bottom: 2em;
+    margin: 0 15% 1.5em;
 
   }
   .map-box {
     width: 100%; 
     height: 400px;
   }
-  .show { //styles specific to the show view
-    p {
-      margin: 0 15% 1.5em;
-    }
+
+  p {
+    margin: 0 15% 1.5em;
   }
+
   h1 {
     font-size: 18px;
     letter-spacing: 2px;
@@ -42,6 +42,9 @@
 
   @media(max-width : $max-tablet-width)  { 
     p {
+      margin: 0 0 1.5em 0;
+    }
+    .map-container {
       margin: 0 0 1.5em 0;
     }
   }

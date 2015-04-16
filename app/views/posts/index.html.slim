@@ -10,16 +10,15 @@
 
   .col-sm-9.col-sm-offset-3
     - for post in @posts
-      a href=post_url(post)
-        .pin.col-xs-12.col-sm-6
-          .preview-image style="background-image: url(#{image_url post.cover_photo_url})"
-            h2 = post.title
-            p = post.created_at.strftime("%d %B %Y")
-          p = truncate(strip_tags(post.body), length: 200)
+      .row 
+        .col-xs-12.col-pad-all
+          a href=post_url(post)
+            div.image-zoom
+              h2.centered-axis-xy.text-center = post.title
+              img src=image_url(post.cover_photo_url)
 
 .row.center-block.text-center
   = will_paginate(@posts, renderer: BootstrapPagination::Rails) 
 
 - if user_signed_in?
   a href=new_post_path New Post
-  

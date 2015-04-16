@@ -46,7 +46,7 @@ h1, h2 {
 }
 
 .container {
-  max-width: 1020px;
+  max-width: 100%;
 }
 a.back {
   font-size: 12px;
@@ -136,4 +136,56 @@ a.back {
   }
   .clickable {
     cursor: pointer;
+  }
+
+  .col-pad-all { //col-x-x only puts padding on left and right. add padding all around.
+    padding: 15px;
+  }
+
+  .centered-axis-x {
+    position: absolute;
+    left: 50%;
+    @include translate(-50%, 0);
+  }
+
+  .centered-axis-xy {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+  }
+
+
+  //for the image zoom containers
+  .image-zoom img {
+    @include transition(all 1.25s ease);
+    width: 100%;
+    @media(max-width: $max-tablet-width){
+      opacity: 0.3;
+    }
+  }
+  .image-zoom h2 {
+    opacity: 0;
+    z-index: 2;
+    text-transform: uppercase;
+    color: $gray-dark;
+    width: 80%;
+    font-weight: bold;
+    @media(max-width: $max-tablet-width){
+      opacity: 1;
+    }
+  }
+
+  .image-zoom:hover img {
+    @include scale(1.1);
+    opacity: 0.3;
+  }
+  .image-zoom:hover h2 {
+    opacity: 1;
+  }
+
+  .image-zoom {
+    width:100%;
+    height:100%;
+    overflow: auto;
   }

@@ -8,13 +8,13 @@
     = render partial: "layouts/top_content_sidebar", :locals => {:top_posts => @top_posts, :top_albums => @top_albums}
 
   .col-sm-9.col-sm-offset-3
-    - for album in @albums
-      a href=album_url(album)
-        .pin.col-xs-12.col-sm-6
-          .preview-image style="background-image: url(#{image_url album.cover_photo_url})"
-            h2 = album.title
-            p = album.created_at.strftime("%d %B %Y")
-          p = strip_tags album.description
+      - for album in @albums
+        .row 
+          .col-xs-12.col-pad-all
+            a href=album_url(album)
+              div.image-zoom
+                h2.centered-axis-xy.text-center = album.title
+                img src=image_url(album.cover_photo_url)
 
 .row.center-block.text-center
   = will_paginate @albums, renderer: BootstrapPagination::Rails
