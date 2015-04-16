@@ -186,6 +186,11 @@ a.back {
 
   .image-zoom {
     width:100%;
-    height:100%;
-    overflow: auto;
+    height:450px;
+    overflow: hidden;
+    @media(max-width: $max-tablet-width){
+      opacity: 1;
+      height: auto;
+      max-height:450px;
+    }
   }
