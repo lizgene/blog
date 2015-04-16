@@ -21,7 +21,7 @@ class Album < ActiveRecord::Base
   end
 
   def cover_photo_url
-    photos.first.image.medium rescue "bay-bridge.jpg"
+    photos.first.image.large rescue "bay-bridge.jpg"
   end
 
   def destroy_photos
