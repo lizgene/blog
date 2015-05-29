@@ -8,8 +8,8 @@ class MailchimpDelivery
   end
 
   def subscribe subscriber
-    gb.lists.subscribe(
-      {:id => list_id, 
+    @gb.lists.subscribe(
+      {:id => @list_id, 
        :email => {:email => subscriber.email}, 
        :merge_vars => {:FNAME => subscriber.first_name}, 
        :double_optin => false})
