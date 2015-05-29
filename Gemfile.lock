@@ -160,6 +160,9 @@ GEM
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     geocoder (1.2.6)
+    gibbon (1.1.5)
+      httparty
+      multi_json (>= 1.9.0)
     gmaps4rails (2.1.2)
     hashie (3.3.1)
     hermitage (0.0.6)
@@ -364,6 +367,7 @@ DEPENDENCIES
   fog
   font-awesome-rails
   geocoder
+  gibbon
   gmaps4rails
   hermitage
   impressionist

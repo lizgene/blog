@@ -3,6 +3,6 @@ class SubscriberMailer < ActionMailer::Base
 
   def welcome(subscriber)
     @subscriber = subscriber
-    mail(to: @subscriber.email, subject: "Welcome to Liz and Nathan's Travel Blog!", tagline: "Get ready for awesome.", tag: "blog: welcome")
+    mail(to: @subscriber.email, subject: "Welcome to Liz and Nathan's Travel Blog!", tag: "blog: welcome")
   end
 end
