@@ -12,7 +12,7 @@ class SubscribersController < ApplicationController
 
     respond_to do |format|
       if @subscriber.save
-        format.html { redirect_to root_path, notice: 'Successfully subscribed!' }
+        format.html { redirect_to root_path, notice: 'Successfully subscribed! Check your email for a special welcome message.' }
       else
         format.html { redirect_to root_path, alert: "There was a problem saving: #{@subscriber.errors.full_messages.join(', ')}" }
       end
