@@ -14,8 +14,7 @@ class SubscribersController < ApplicationController
       if @subscriber.save
         format.html { redirect_to root_path, notice: 'Successfully subscribed!' }
       else
-        format.html { render :new }
-        format.json { render json: @subscriber.errors, status: :unprocessable_entity }
+        format.html { redirect_to root_path, alert: "There was a problem saving: #{@subscriber.errors.full_messages.join(', ')}" }
       end
     end
   end

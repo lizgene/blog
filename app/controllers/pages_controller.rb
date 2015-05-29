@@ -2,6 +2,9 @@ class PagesController < ApplicationController
 
   def home
     @posts = Post.last(4).reverse
+    
+    @subscriber = Subscriber.new
+
     render layout: false
   end
 

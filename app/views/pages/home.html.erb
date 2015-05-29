@@ -26,6 +26,9 @@
   
 </head>
 <body id="home">
+  <div class="flash">
+    <%= render partial: "layouts/flash" %>
+  </div>
   <%= render partial: "layouts/header" %>
 
   <main>
@@ -47,11 +50,35 @@
         </div>
       </div>
     </div>
+
   </section>
+
+  <div class="container-fluid pvl">
+    <div class="row text-center">
+
+      <%= form_for @subscriber, url: subscribers_path, method: "post", html: { class: "form-inline" } do |f| %>
+          <div class="form-group">
+            <%= f.label :email, "Love us? Get Liz & Nathan updates in your inbox:", class: "control-label" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+            <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Subscribe!", class: "btn btn-success" %>
+          </div>
+
+        </div>
+      <% end %>
+
+    </div>
+  </div>
 
  
   <div class="container blog-preview-section">
-    <div class="homepage-section-header clickable">Join us<br /><i class="fa fa-angle-down"></i></div>
+    <div class="homepage-section-header clickable">Read the latest<i class="fa fa-arrow-down"></i></div>
     <div id="#preview-content">
 
       <div class="row">

@@ -4,7 +4,7 @@
       <h2><%= pluralize(@subscriber.errors.count, "error") %>: Your info could not be saved. Contact Liz for details!</h2>
 
       <ul>
-      <% @post.errors.full_messages.each do |message| %>
+      <% @subscriber.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
