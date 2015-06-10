@@ -1,12 +1,12 @@
-- unless @top_posts.empty?
-h5
- | Most 
- i.fa.fa-heart-o
- |  Posts
-table.table
-  - for post in @top_posts
-    tr
-      td.title = link_to(post.title, post)
+/ - unless @top_posts.empty?
+/ h5
+/  | Most 
+/  i.fa.fa-heart-o
+/  |  Posts
+/ table.table
+/   - for post in @top_posts
+/     tr
+/       td.title = link_to(post.title, post)
 
 - unless @top_albums.empty?
 h5
