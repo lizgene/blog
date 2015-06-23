@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     render layout: false
   end
 
+  def wedding
+    render layout: false
+  end
+
   def test 
   end
 

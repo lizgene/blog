@@ -30,36 +30,6 @@ body {
     display: inline-block;
     object-fit: contain;
   }
-  .homepage-hero {
-    display: block;
-    height: 75vh;
-    position: relative !important;
-    transition: all 200ms;
-    padding: 0;
-    color: white;
-    text-align: center;
-  }
-  .homepage-hero-container {
-    display: table;
-    margin: 0 auto;
-    height: 100%;
-    position: relative;
-    z-index: 10;
-  }
-  .homepage-hero-content {
-    display: table-cell;
-    position: relative;
-    padding-top: 10%;
-    z-index: 10;
-    text-align: center;
-    vertical-align: middle;
-  }
-  .homepage-hero-headline {
-    font-size: 42px;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    font-family: $font-family-monospace;
-  }
 
   .homepage-section-header {
     font-size: 27px;
@@ -68,16 +38,14 @@ body {
     letter-spacing: 1px;
     text-align: center;
     padding: 10px 0 25px;
-    font-family: $font-family-sans-serif;
     font-weight: bold;
-    text-transform: uppercase;
   }
 
   @media(max-width: $max-phone-width){
     #pretzel-video, .video-container, video {
       display: none;
     }
-    .homepage-hero {
+    .hero {
       background-image: url(<%= asset_path 'thailand-cover.jpg' %>);
       background-attachment: fixed;
       background-position: top center;

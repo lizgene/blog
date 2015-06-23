@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact', as: :contact
   get '/index' => 'pages#home', as: :home
   get '/test' => 'pages#test'
+  get '/wedding' => 'pages#wedding'
 
   #Posts
   post 'posts/email_post' => 'posts#email_post'

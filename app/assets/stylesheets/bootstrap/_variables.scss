@@ -16,7 +16,7 @@ $gray-lighter:           #eee !default; // #eee
 
 $brand-primary:         #609F80 !default; // teal
 $brand-success:         #7bb38e !default; // pea green
-$brand-info:            #CBB345 !default; // dandelion
+$brand-info:            #BF9412 !default; // dandelion
 $brand-warning:         #4B574D !default; // navy blue
 $brand-danger:          #AF420A !default; // deep red
 $brand-destroy:         #b5966a !default; // light brown
@@ -60,8 +60,9 @@ $link-hover-decoration: underline !default;
 //## Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:  "Helvetica", Verdana, Arial, sans-serif !default;
-$font-family-headers-bold: "LeagueGothic", Impact, sans-serif;
+$headings-font-family: "Futura", Impact, sans-serif;
 $font-family-monospace: "Courier New", Courier, monospace;
+$font-family-cursive: "Grand Hotel", cursive;
 
 // $btn-default-font:     $font-family-sans-serif !default;
 // $font-family-headers:        "Hipsterish", Helvetica, Verdana, Arial, sans-serif !default;
@@ -76,6 +77,11 @@ $navbar-default-bg: #FFF;
 $navbar-default-text: #FFF;
 $navbar-default-border: none;
 
+//Border radius: controls radius for all inputs, buttons, etc.
+//Can also style border-radius for buttons, etc. separately
+$border-radius-base:        none !default;
+$border-radius-large:       none !default;
+$border-radius-small:       none !default;
 
 
 //== Screen Sizes for Media Queries

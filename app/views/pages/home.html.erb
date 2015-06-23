@@ -33,7 +33,7 @@
 
   <main>
 
-  <section class="homepage-hero">
+  <section class="hero">
 
     <div class="video-container">
       <video loop="loop" autoplay="autoplay" preload="auto" id="pretzel-video" class="video-playing">
@@ -42,8 +42,8 @@
       </video>
     </div>
 
-    <div class="homepage-hero-container">
-      <div class="homepage-hero-content">
+    <div class="hero-container">
+      <div class="hero-content">
         <div class="col-xs-6 col-xs-offset-3 col-sm-12 col-sm-offset-0">
           <h1 style="display: none;">Ginger and the Cyclist - Liz Hubertz and Nathan Arnold Travel Blog!</h1>
           <%= image_tag "logo.png", class: "img-responsive center-block" %>
@@ -57,9 +57,6 @@
     <div class="row text-center">
 
       <%= form_for @subscriber, url: subscribers_path, method: "post", html: { class: "form-inline" } do |f| %>
-          <div class="form-group">
-            <%= f.label :email, "Love us? Get Liz & Nathan updates in your inbox:", class: "control-label" %>
-          </div>
 
           <div class="form-group">
             <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
@@ -67,7 +64,7 @@
           </div>
 
           <div class="form-group">
-            <%= f.submit "Subscribe!", class: "btn btn-success" %>
+            <%= f.submit "Subscribe for Liz & Nathan Updates", class: "btn btn-primary" %>
           </div>
 
         </div>
@@ -78,7 +75,7 @@
 
  
   <div class="container blog-preview-section">
-    <div class="homepage-section-header clickable">Read the latest<i class="fa fa-arrow-down"></i></div>
+    <div class="homepage-section-header text-uppercase text-headings clickable">Read the latest ...<i class="fa fa-bicycle"></i></div>
     <div id="#preview-content">
 
       <div class="row">
