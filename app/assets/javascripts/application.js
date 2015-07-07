@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require hermitage
-//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui
+//= require hermitage
+//= require bootstrap-sprockets
 //= require s3_direct_upload
 //= require underscore
 //= require gmaps/google

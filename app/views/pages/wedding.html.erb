@@ -29,41 +29,126 @@
   <div class="flash">
     <%= render partial: "layouts/flash" %>
   </div>
-  <%= render partial: "layouts/wedding_header" %>
+  
 
     <section id="intro" class="intro-section">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="text-uppercase" style="font-size: 32px; font-family: 'Futura BQ';">chapter 6</h1>
-            <h1 class="text-uppercase" style="font-size: 80px; font-family: 'Futura BQ';">the life arnold</h1>
-            <h1 class="text-uppercase" style="font-size: 32px; font-family: 'Futura BQ';">"This is an adventure."</h1>
-            <p>Coming Soon</p>
-            <a class="btn btn-warning mvxl page-scroll" href="#when">Click Me to Scroll Down!</a>
+            <h1 class="text-uppercase text-headers-small">June 25, 2016</h1>
+            <h1 class="text-uppercase">the life arnold</h1>
+            <h1 class="text-uppercase text-headers-small">"This is an adventure."</h1>
           </div>
         </div>
       </div>
+
+      <%= render partial: "layouts/wedding_header" %>
     </section> 
 
-    <section id="zissou-quote" class="quote-section">
+
+    <section id="cast" class="cast-section">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-              <h1 class="text-uppercase">The Deeper You go, the weirder life gets</h1>
+
+        <div class="row text-center credits">
+          <div class="col-sm-12">
+            <h2 class="cursive">starring</h2>
           </div>
         </div>
-      </div>
-    </section>
 
+        <div class="row credits">
+          <div class="col-sm-offset-1 col-sm-4">
+             <div class="row">
+              <div class="col-sm-12 text-center center-block">
+                <h2>NATHAN ARNOLD</h2>
+                <p><%= image_tag "wedding/nathan_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p>as</p>
+                <h2>THE GROOM</h2>
+              </div>
+            </div>
+          </div>
 
-    <section id="when" class="when-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-              <h1>June 25th, 2016</h1>
+          <div class="col-sm-2 text-center">
+            <h1 style="padding-top: 50%; font-size: 200px;">+</h1>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="row">
+              <div class="col-sm-12 text-center center-block">
+                <h2>ELIZABETH HUBERTZ</h2>
+                <p><%= image_tag "wedding/liz_headshot_sunglasses.jpg", class: "headshot img-responsive center-block" %></p>
+                <p>as</p>
+                <h2>THE BRIDE</h2>
+              </div>
+            </div>
+          </div>
+        </div><!-- end bride and groom photos row -->
+
+        <div class="row text-center credits mvxl">
+          <div class="col-sm-12">
+            <h2 class="cursive">also featuring</h2>
           </div>
         </div>
+
+        <div class="row credits mvxl">
+
+          <div class="col-sm-2 col-sm-offset-1">
+             <div class="row">
+              <div class="col-sm-12 text-center center-block">
+                <p>JANET DEININGER</p>
+                <p><%= image_tag "wedding/jan_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p>as</p>
+                <p>MOTHER OF THE BRIDE</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+             <div class="row">
+              <div class="col-sm-12 text-center center-block">
+                <p>LORETTA DEININGER</p>
+                <p><%= image_tag "wedding/lori_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p>as</p>
+                <p>SISTER OF THE BRIDE</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+             <div class="row">
+              <div class="col-sm-12 text-center center-block">
+                <p>HENRY</p>
+                <p><%= image_tag "wedding/henry_headshot2.jpg", class: "headshot img-responsive center-block" %></p>
+                <p>as</p>
+                <p>A GOOD DOG</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+             <div class="row">
+              <div class="col-sm-12 text-center center-block">
+                <p>MICHELLE ARNOLD</p>
+                <p><%= image_tag "wedding/michelle_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p>as</p>
+                <p>MOTHER OF THE GROOM</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+             <div class="row">
+              <div class="col-sm-12 text-center center-block">
+                <p>EMILY WELCH</p>
+                <p><%= image_tag "wedding/emily_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p>as</p>
+                <p>SISTER OF THE GROOM</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end family -->
+
       </div>
     </section>
 
@@ -71,19 +156,100 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-              <h1 class="text-uppercase">I love you, but you don't know what you're talking about</h1>
+              <!-- <h3 class="futura">"I admit we knew we'd get in trouble. That part's true. We knew people would be worried, and we still ran away, anyway. But something also happened, which we didn't do on purpose. When we first met each other, something happened to us."</h3> -->
           </div>
         </div>
       </div>
     </section>
 
-    <section id="where" class="where-section">
+    <section id="story" class="story-section">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-              <h1>Fort Wayne, Indiana</h1>
+        <div class="row mbl">
+          <div class="col-sm-10 col-sm-offset-1">
+            <h3 class="text-center">I admit we knew we'd get in trouble. That part's true.<br />
+              We knew people would be worried, and we still ran away, anyway.<br />
+              But something also happened, which we didn't do on purpose.<br /> When we first met each other, something happened to us.</h3>
           </div>
         </div>
+
+        <div class="row chapter-slideshow">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div id="carousel-example-generic" class="carousel slide" data-keyboard="true" data-interval="false">
+
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-bicycle fa-stack-1x fa-inverse"></i>
+                </li>
+                <li data-target="#carousel-example-generic" data-slide-to="1" class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
+                </li>
+                <li data-target="#carousel-example-generic" data-slide-to="2" class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-automobile fa-stack-1x fa-inverse"></i>
+                </li>
+
+                <li data-target="#carousel-example-generic" data-slide-to="3" class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
+                </li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <%= image_tag "wedding/chapterheadertest.jpg", class: "img-responsive center-block" %>
+                  <div class="chapter">
+                    <p>Twee PBR bicycle rights, distillery Pitchfork fingerstache heirloom artisan pour-over scenester stumptown. Retro gentrify keffiyeh, cornhole paleo aesthetic fanny pack iPhone slow-carb narwhal tofu trust fund fap four loko. Lumbersexual cliche asymmetrical narwhal polaroid taxidermy. Migas High Life readymade kitsch, trust fund Intelligentsia fap church-key bicycle rights bespoke. Dreamcatcher vegan keffiyeh four loko lo-fi blog, Portland Etsy pop-up Brooklyn meh. Bespoke deep v organic, stumptown Kickstarter aesthetic butcher Godard gastropub Odd Future American Apparel. Portland organic trust fund hella lumbersexual listicle, Austin sriracha.</p>
+
+                    <p>Next level chia Schlitz, butcher heirloom street art biodiesel food truck yr vinyl four dollar toast fingerstache gentrify. Cred selvage PBR&B, readymade Etsy cornhole Intelligentsia lumbersexual Helvetica. Taxidermy vegan kogi gentrify street art, vinyl Pinterest Odd Future aesthetic four loko American Apparel farm-to-table. Raw denim fixie four dollar toast organic.</p>
+                  </div>
+                </div>
+                <div class="item">
+                  <%= image_tag "wedding/chapterheadertest.jpg", class: "img-responsive center-block" %>
+                  <div class="chapter">
+                    <p>Twee PBR bicycle rights, distillery Pitchfork fingerstache heirloom artisan pour-over scenester stumptown. Retro gentrify keffiyeh, cornhole paleo aesthetic fanny pack iPhone slow-carb narwhal tofu trust fund fap four loko. Lumbersexual cliche asymmetrical narwhal polaroid taxidermy. Migas High Life readymade kitsch, trust fund Intelligentsia fap church-key bicycle rights bespoke. Dreamcatcher vegan keffiyeh four loko lo-fi blog, Portland Etsy pop-up Brooklyn meh. Bespoke deep v organic, stumptown Kickstarter aesthetic butcher Godard gastropub Odd Future American Apparel. Portland organic trust fund hella lumbersexual listicle, Austin sriracha.</p>
+
+                    <p>Next level chia Schlitz, butcher heirloom street art biodiesel food truck yr vinyl four dollar toast fingerstache gentrify. Cred selvage PBR&B, readymade Etsy cornhole Intelligentsia lumbersexual Helvetica. Taxidermy vegan kogi gentrify street art, vinyl Pinterest Odd Future aesthetic four loko American Apparel farm-to-table. Raw denim fixie four dollar toast organic.</p>
+                  </div>
+                </div>
+
+
+                <div class="item">
+                  <%= image_tag "wedding/chapterheadertest.jpg", class: "img-responsive center-block" %>
+                  <div class="chapter">
+                    <p>Twee PBR bicycle rights, distillery Pitchfork fingerstache heirloom artisan pour-over scenester stumptown. Retro gentrify keffiyeh, cornhole paleo aesthetic fanny pack iPhone slow-carb narwhal tofu trust fund fap four loko. Lumbersexual cliche asymmetrical narwhal polaroid taxidermy. Migas High Life readymade kitsch, trust fund Intelligentsia fap church-key bicycle rights bespoke. Dreamcatcher vegan keffiyeh four loko lo-fi blog, Portland Etsy pop-up Brooklyn meh. Bespoke deep v organic, stumptown Kickstarter aesthetic butcher Godard gastropub Odd Future American Apparel. Portland organic trust fund hella lumbersexual listicle, Austin sriracha.</p>
+
+                    <p>Next level chia Schlitz, butcher heirloom street art biodiesel food truck yr vinyl four dollar toast fingerstache gentrify. Cred selvage PBR&B, readymade Etsy cornhole Intelligentsia lumbersexual Helvetica. Taxidermy vegan kogi gentrify street art, vinyl Pinterest Odd Future aesthetic four loko American Apparel farm-to-table. Raw denim fixie four dollar toast organic.</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <%= image_tag "wedding/chapterheadertest.jpg", class: "img-responsive center-block" %>
+                  <div class="chapter">
+                    <p>Twee PBR bicycle rights, distillery Pitchfork fingerstache heirloom artisan pour-over scenester stumptown. Retro gentrify keffiyeh, cornhole paleo aesthetic fanny pack iPhone slow-carb narwhal tofu trust fund fap four loko. Lumbersexual cliche asymmetrical narwhal polaroid taxidermy. Migas High Life readymade kitsch, trust fund Intelligentsia fap church-key bicycle rights bespoke. Dreamcatcher vegan keffiyeh four loko lo-fi blog, Portland Etsy pop-up Brooklyn meh. Bespoke deep v organic, stumptown Kickstarter aesthetic butcher Godard gastropub Odd Future American Apparel. Portland organic trust fund hella lumbersexual listicle, Austin sriracha.</p>
+
+                    <p>Next level chia Schlitz, butcher heirloom street art biodiesel food truck yr vinyl four dollar toast fingerstache gentrify. Cred selvage PBR&B, readymade Etsy cornhole Intelligentsia lumbersexual Helvetica. Taxidermy vegan kogi gentrify street art, vinyl Pinterest Odd Future aesthetic four loko American Apparel farm-to-table. Raw denim fixie four dollar toast organic.</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div><!-- end carousel -->
+
+          </div>
+        </div><!-- end chapter-slideshow -->
+
       </div>
     </section>
 

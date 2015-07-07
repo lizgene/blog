@@ -1,17 +1,32 @@
+//life acquatic palette
+$acquatic-light-yellow: #F3F13A;
+$acquatic-dark-yellow: #D79C00;
+$acquatic-light-blue: #68ABB8;
+$acquatic-dark-blue: #3188A3;
+$acquatic-red: #E50000;
+
+//fantastic mr fox
+$fox-yellow: #E0C800;
+$fox-blue: #3E98BB;
+$fox-orange: #DA7300;
+$fox-red: #A40018;
+$fox-burnt-orange: #D07317;
+
+//moonrise kingdom
+$mk-red: #97000E;
+$mk-yellow: #E8B300;
+$mk-gold: #9A711E;
+$mk-blue: #7BB4A5;
+$mk-white: #E2CDA9;
+
+//Wes Anderson Fonts
+$acquatic-headings-font-family: 'Futura BQ';
+$mk-headings-font-family: $font-family-cursive;
+$wes-anderson-headings-font-family: 'Futura';
+
 html#wedding {
   width: 100%;
   height: 100%;
-  
-  nav {
-    margin-top: 20px;
-    li {
-      a {
-        font-size: 28px;
-        color: $brand-info;
-        font-family: $headings-font-family;
-      }
-    }
-  }
 
   body {
       width: 100%;
@@ -19,21 +34,10 @@ html#wedding {
   }
 
   .full-page {
-    h1 {
-      font-size: 58px;
-      color: #F3F13A;
-      font-family: $font-family-cursive;
-    }
-    height: 100%;
+    padding-top: 100px; //height of navbar is 90px
     min-height: 100%;
-    padding-top: 150px;
-    text-align: center;
     background-size: cover;
     background-attachment: fixed;
-  }
-  .half-page {
-    padding: 50px 0px;
-    text-align: center;
   }
 
   .overlay {
@@ -45,52 +49,158 @@ html#wedding {
     background-color:rgba(25, 25, 25, 0.4);
   }
 
-  .intro-section {
-    @extend .full-page;
-    background-image: url(<%= asset_path 'lifeacquatic-submarine.jpg' %>);
+  .headshot {
+    max-height: 300px;
   }
 
-  .when-section {
-    background-image: url(<%= asset_path 'moonrisekingdom-dancing.jpg' %>);
+  .intro-section {
+    h1 {
+      text-align: center;
+      font-family: $acquatic-headings-font-family;
+      font-size: 58px;
+      color: $mk-yellow;
+    }
+    padding-top: 150px;
+    font-family: $acquatic-headings-font-family;
     @extend .full-page;
+    background-image: url(<%= asset_path 'wedding/cups_bw.jpg' %>);
   }
-  .where-section {
-    background-image: url(<%= asset_path 'moonrisekingdom-field.jpg' %>);
+
+  .cast-section {
+    background-color: $mk-white;
+
+    background: #f4f4f2 url(<%= asset_path 'wedding/teal_texture.jpg' %>) 0 0 repeat;
     @extend .full-page;
+
+    .credits {
+      font-family: $wes-anderson-headings-font-family !important;
+      color: $mk-red;
+    }
+    .love-letters {
+      text-align: left;
+      font-family: $font-family-cursive;
+      font-size: 24px;
+
+      .letter {
+         background-color:rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+  .story-section {
+    background: #f4f4f2 url(<%= asset_path 'wedding/wood_pattern.jpg' %>) 0 0 repeat;
+    color: $mk-white;
+    font-family: $font-family-monospace;
+    @extend .full-page;
+
+    h3 {
+      font-family: $font-family-monospace;
+    }
+    .chapter {
+      padding: 15px;
+      height: 400px;
+    }
+
+    .carousel-styles {
+      display: inline-block;
+      border: none;
+      width: 35px;
+      height: 35px;
+
+      text-indent: 0;
+      cursor: pointer;
+      background-color: transparent;
+      margin: 0;
+    }
+    .carousel-indicators li {
+      @extend .carousel-styles;
+
+      .fa-stack-2x { //bottom layer (circle)
+        color: $mk-blue;
+      }
+      .fa-stack-1x { //top layer (flag or whatever)
+        color: $mk-white;
+      }
+    }
+    .carousel-indicators li.active {
+      @extend .carousel-styles;
+
+      .fa-stack-2x { //bottom layer
+        color: $mk-white;
+      }
+      .fa-stack-1x { //top layer
+        color: $mk-blue;
+      }
+    }
+
   }
 
   .what-section {
-    background-image: url(<%= asset_path 'moonrisekingdom-married.jpg' %>);
+    background-image: url(<%= asset_path 'wedding/window_handholds.jpg' %>);
     @extend .full-page;
   }
 
   .who-section {
-    background-image: url(<%= asset_path 'moonrisekingdom-married.jpg' %>);
+    background-image: url(<%= asset_path 'wedding/handhold_bw.jpg' %>);
     @extend .full-page;
   }
   .rsvp-section {
-    background-image: url(<%= asset_path 'moonrisekingdom-married.jpg' %>);
+    background-image: url(<%= asset_path 'wedding/moonrisekingdom-married.jpg' %>);
     @extend .full-page;
   }
 
   .why-section {
-    background-image: url(<%= asset_path 'moonrisekingdom-married.jpg' %>);
+    background-image: url(<%= asset_path 'wedding/moonrisekingdom-married.jpg' %>);
     @extend .full-page;
   }
 
   .quote-section {
-    @extend .half-page;
-    color: $brand-info;
-    background: $brand-warning;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    color: $mk-white;
+    background: $mk-gold;
   }
 
 
   // Navbar
 
-  header {
-    background-color: transparent;
+  nav {
+    li {
+      a {
+        font-size: 24px;
+        font-family: $headings-font-family;
+      }
+    }
+  }
+
+  #wedding-header {
+    height: 80px;
+    margin: 0;
     position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color:rgba(25, 25, 25, 0.4);
+
+    &:after {
+      background: transparent url(<%= asset_path 'wedding/diagonal_texture.png' %>) 0 0 repeat;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 24px;
+      position: absolute;
+      bottom: -10px;
+    }
+  }
+
+  #wedding-header.affix {
+    position: fixed;
+    background-color:rgba(25, 25, 25, 0.4);
     top: 0;
+    width: 100%;
+    z-index: 100;
+    left: 0;
+    margin-top: 0;
+
   }
 
   .navbar .nav,
@@ -107,15 +217,16 @@ html#wedding {
   }
 
   .nav {
-     li a {
-        padding: 0px 0px 10px 0px;
-        margin: 0px 15px;
-        &:link, &:hover, &:visited, &:active {
-          background-color: transparent;
-          outline: 0;
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //gets rid of grey background on link when clicked
-        }
+   li a {
+      color: $mk-blue;
+      padding: 0px 0px 10px 0px;
+      margin: 0px 15px;
+      &:link, &:hover, &:visited, &:active {
+        background-color: transparent;
+        outline: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0); //gets rid of grey background on link when clicked
       }
+    }
   }
 
   .navbar-link {
@@ -139,6 +250,39 @@ html#wedding {
     .top-nav-collapse {
         padding: 0;
     }
+  }
+
+  // utilities
+
+  .text-headers-small {
+    font-size: 32px !important;
+  }
+
+  .vertical-center {
+    padding: 0;
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .futura {
+    font-family: $wes-anderson-headings-font-family !important;
+  }
+
+  .cursive {
+    font-family: $font-family-cursive;
+  }
+
+  .grayscale {
+    -webkit-filter: grayscale(100%);
+  }
+  .sepia {
+    -webkit-filter: sepia(100%);
+  }
+
+  .huerotation {
+    -webkit-filter: hue-rotate(180deg);
   }
 
 }
