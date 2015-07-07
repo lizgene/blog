@@ -97,10 +97,22 @@ html#wedding {
     }
     .chapter {
       padding: 15px;
-      height: 400px;
+      height: 350px;
     }
 
-    .carousel-styles {
+    .carousel-control {
+      background: none;
+      .glyphicon {
+        margin-top: -150px;
+      }
+      &.left {
+        left: -15%;
+      }
+      &.right {
+        right: -15%;
+      }
+    }
+    .carousel-indicator-styles {
       display: inline-block;
       border: none;
       width: 35px;
@@ -112,7 +124,7 @@ html#wedding {
       margin: 0;
     }
     .carousel-indicators li {
-      @extend .carousel-styles;
+      @extend .carousel-indicator-styles;
 
       .fa-stack-2x { //bottom layer (circle)
         color: $mk-blue;
@@ -122,7 +134,7 @@ html#wedding {
       }
     }
     .carousel-indicators li.active {
-      @extend .carousel-styles;
+      @extend .carousel-indicator-styles;
 
       .fa-stack-2x { //bottom layer
         color: $mk-white;
@@ -155,10 +167,11 @@ html#wedding {
 
   .quote-section {
     position: relative;
-    padding: 20px;
+    height: 5px;
     text-align: center;
     color: $mk-white;
-    background: $mk-gold;
+    background-color: $mk-gold;
+    // background: $mk-gold url(<%= asset_path 'wedding/gold-border.jpg' %>) 0 0 repeat;  
   }
 
 
