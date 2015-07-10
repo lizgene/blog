@@ -36,9 +36,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="text-uppercase text-headers-small">June 25, 2016</h1>
-            <h1 class="text-uppercase">the life arnold</h1>
-            <h1 class="text-uppercase text-headers-small">"This is an adventure."</h1>
+            <h2 class="text-uppercase text-headers-small">the</h2>
+            <h1 class="man text-uppercase">life arnold</h1>
+            <p class="mbn">with</p>
+            <h2 class="mtn text-uppercase text-headers-small">liz & nathan</h2>
           </div>
         </div>
       </div>
@@ -61,7 +62,7 @@
              <div class="row">
               <div class="col-sm-12 text-center center-block">
                 <h2>NATHAN ARNOLD</h2>
-                <p><%= image_tag "wedding/nathan_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p><%= image_tag "wedding/nathan_headshot.jpg", class: "img-circle headshot img-responsive center-block" %></p>
                 <p>as</p>
                 <h2>THE GROOM</h2>
               </div>
@@ -76,7 +77,7 @@
             <div class="row">
               <div class="col-sm-12 text-center center-block">
                 <h2>ELIZABETH HUBERTZ</h2>
-                <p><%= image_tag "wedding/liz_headshot_sunglasses.jpg", class: "headshot img-responsive center-block" %></p>
+                <p><%= image_tag "wedding/liz_headshot_sunglasses.jpg", class: "img-circle headshot img-responsive center-block" %></p>
                 <p>as</p>
                 <h2>THE BRIDE</h2>
               </div>
@@ -96,7 +97,7 @@
              <div class="row">
               <div class="col-sm-12 text-center center-block">
                 <p>JANET DEININGER</p>
-                <p><%= image_tag "wedding/jan_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p><%= image_tag "wedding/jan_headshot.jpg", class: "img-circle headshot img-responsive center-block" %></p>
                 <p>as</p>
                 <p>MOTHER OF THE BRIDE</p>
               </div>
@@ -107,7 +108,7 @@
              <div class="row">
               <div class="col-sm-12 text-center center-block">
                 <p>LORETTA DEININGER</p>
-                <p><%= image_tag "wedding/lori_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p><%= image_tag "wedding/lori_headshot.jpg", class: "img-circle headshot img-responsive center-block" %></p>
                 <p>as</p>
                 <p>SISTER OF THE BRIDE</p>
               </div>
@@ -118,7 +119,7 @@
              <div class="row">
               <div class="col-sm-12 text-center center-block">
                 <p>HENRY</p>
-                <p><%= image_tag "wedding/henry_headshot2.jpg", class: "headshot img-responsive center-block" %></p>
+                <p><%= image_tag "wedding/henry_headshot2.jpg", class: "img-circle headshot img-responsive center-block" %></p>
                 <p>as</p>
                 <p>A GOOD DOG</p>
               </div>
@@ -129,7 +130,7 @@
              <div class="row">
               <div class="col-sm-12 text-center center-block">
                 <p>MICHELLE ARNOLD</p>
-                <p><%= image_tag "wedding/michelle_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p><%= image_tag "wedding/michelle_headshot.jpg", class: "img-circle headshot img-responsive center-block" %></p>
                 <p>as</p>
                 <p>MOTHER OF THE GROOM</p>
               </div>
@@ -140,7 +141,7 @@
              <div class="row person">
               <div class="col-sm-12 text-center center-block">
                 <p>EMILY WELCH</p>
-                <p><%= image_tag "wedding/emily_headshot.jpg", class: "headshot img-responsive center-block" %></p>
+                <p><%= image_tag "wedding/emily_headshot.jpg", class: "img-circle headshot img-responsive center-block" %></p>
                 <p>as</p>
                 <p>SISTER OF THE GROOM</p>
               </div>
@@ -277,8 +278,7 @@
       </div>
     </section>
 
-    <section id="moonrisekingdom-quote" class="quote-section">
-    </section>
+    <section class="quote-section"></section>
 
     <section id="what" class="guide">
       <div class="container">
@@ -399,39 +399,156 @@
       </div>
     </section>
 
-    <section id="moonrisekingdom-quote" class="quote-section">
-    </section>
-
-    <section id="why" class="why-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-              <h1>Because we love each other. What's wrong with that?</h1>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="moonrisekingdom-quote" class="quote-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-              <h1 class="text-uppercase">F**K THE ITINERARY</h1>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="quote-section"></section>
 
     <section id="rsvp" class="rsvp-section">
       <div class="container">
-        <div class="row">
+        <div class="row header">
           <div class="col-lg-12">
-              <h1>RSVP</h1>
+              <h2>RSVP</h2>
+              <h1 class="mvl">Please Circle ONE</h1>
+              <h2>before April 25, 2016</h2>
+          </div>
+        </div>
+
+         <div class="row rsvp-buttons mtxl">
+          <div class="col-xs-6 col-sm-3 col-sm-offset-3">
+            <a href="#yes" aria-controls="yes" role="tab" data-toggle="tab">YES</a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#no" aria-controls="no" role="tab" data-toggle="tab">NO</a>
+          </div>
+        </div>
+
+        <div class="row mvxl">
+
+           <div class="tab-content">
+            <div role="tabpanel" class="tab-pane" id="yes">
+
+              <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                  <%= form_tag do %>
+                    <h2 class="cursive">Get ready for adventure!</h2>
+
+                    <div class="form-group">
+                      <%= text_field_tag :name, "", placeholder: "Your Name", class: "form-control" %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= text_field_tag :email, "", placeholder: "Your Email", class: "form-control" %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= submit_tag "Enthusiastically Attend", class: "btn btn-primary" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div> 
+            </div>
+            <div role="tabpanel" class="tab-pane" id="no">
+              <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                  <%= form_tag do %>
+                    <h2 class="cursive">We'll miss you!</h2>
+                    
+                    <div class="form-group">
+                      <%= text_field_tag :name, "", placeholder: "Your Name", class: "form-control" %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= text_field_tag :email, "", placeholder: "Your Email", class: "form-control" %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= submit_tag "Regretfully Decline", class: "btn btn-primary" %>
+                    </div>
+                  <% end %> 
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      OMG what do I wear!?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <p>Wear whatever makes you feel like a fabulous dancing party animal.</p>
+                    <p>Extra cake for anyone who shows up in a banana suit.</p>
+                    <p>No cake for anyone who is physically able and chooses not to dance. For shame!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Where are you registered? 
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    <p>First, your presence at our wedding is gift enough. Elizabeth's dowry has already been paid by her generous and loving mother, who has set aside 8 cows, 12 sheep, 10 bushels of grain, 5 chickens, and 20 sacks of flour, which Nathan’s family has happily received as an acceptable bride price.</p>
+                    <p>Second, as many of you know, Nathan and I are actively pursuing a life of homeless vagabondry. If we are not homeless vagabonds at this exact moment, we are most likely living in some tiny-ass apartment in some big-ass city and may or may not own a car. That means any beautiful blenders, high-tech rice makers, or fancy flatware would need to be stored for up to a decade in our mothers’ houses, which we have been told is unacceptable due to common sense and the recent influx of barnyard animals. (Dowries are such a drag!)</p>
+                    <p>That said, if you’re awesome at gift-wrapping and/or feel totally awkward showing up empty handed (I get it, my mom is a die hard gift-giver), we will always appreciate love letters, cards, homemade gifts, or possibly booze.* We promise to send you a love letter in return.</p>
+                    <p>*Note if you choose to gift booze, Nathan will judge you swiftly and harshly on your taste. I, Liz, hereby take no responsibility and will give no hints on his possible preferences, lest I be judged on your behalf. </p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      I see Henry is a groomsman. Can my dog attend?
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    <p>
+                      Unfortunately, we are big liars and will have to break it to Henry last-minute that he can't come, either. We had to put him in the bridal party, because he thinks he's people.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </div>
     </section>
 
+
+    <section class="quote-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <p class="cursive mam text-headers-small">this website was made with love by the bride</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 </body>

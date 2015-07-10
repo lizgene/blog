@@ -1,11 +1,22 @@
+//grand budapest
+$gb-mauve: #7C4C4D;
+$gb-peach: #EC9283;
+$gb-pink: #FA6D7A;
+$gb-light-mauve: #C08A85;
+$gb-navy: #534659;
+$gb-teal: #487C87;
+
 //life acquatic palette
 $acquatic-light-yellow: #F3F13A;
 $acquatic-dark-yellow: #D79C00;
 $acquatic-light-blue: #68ABB8;
 $acquatic-dark-blue: #3188A3;
 $acquatic-red: #E50000;
+$acquatic-light-gray: #C3CED0;
+$acquatic-skin-color: #E5C39E;
 
 //fantastic mr fox
+$fox-white: #E7D2B7;
 $fox-yellow: #E0C800;
 $fox-blue: #3E98BB;
 $fox-orange: #DA7300;
@@ -13,11 +24,21 @@ $fox-red: #A40018;
 $fox-burnt-orange: #D07317;
 
 //moonrise kingdom
+$mk-light-blue: #DAECEE;
 $mk-red: #97000E;
 $mk-yellow: #E8B300;
 $mk-gold: #9A711E;
 $mk-blue: #7BB4A5;
 $mk-white: #E2CDA9;
+
+//universal variables
+
+$dark-base: $acquatic-dark-blue;
+$white-base: $acquatic-light-gray;
+$light-base: $acquatic-skin-color;
+$bold-base: $acquatic-red;
+$bright-base: $acquatic-light-blue;
+$highlight-base: $acquatic-light-yellow;
 
 //Wes Anderson Fonts
 $acquatic-headings-font-family: 'Futura BQ';
@@ -53,33 +74,63 @@ html#wedding {
   .headshot {
     max-height: 300px;
   }
+  //this is just a helper for colors
 
+  .palette {
+    li:nth-child(1) > i:first-child {
+      color: $white-base;
+    }
+    li:nth-child(2) > i:first-child {
+      color: $light-base;
+    }
+    li:nth-child(3) > i:first-child {
+      color: $highlight-base;
+    }
+    li:nth-child(4) > i:first-child {
+      color: $bold-base;
+    }
+    li:nth-child(5) > i:first-child {
+      color: $bright-base;
+    }
+    li:nth-child(6) > i:first-child {
+      color: $dark-base;
+    }
+  }
+  
   .intro-section {
-    h1 {
+    color: $highlight-base;
+    font-weight: bold;
+    text-align: center;
+    h1, h2 {
+      margin: 0;
+      font-stretch: ultra-condensed;
       text-align: center;
       font-family: $acquatic-headings-font-family;
-      font-size: 58px;
-      color: $mk-yellow;
+    }
+    h1 {
+      font-size: 94px;
     }
     padding-top: 150px;
-    font-family: $acquatic-headings-font-family;
+    font-family: $wes-anderson-headings-font-family;
     @extend .full-page;
     background-image: url(<%= asset_path 'wedding/cups_bw.jpg' %>);
   }
 
   .cast-section {
-    background: #f4f4f2 url(<%= asset_path 'wedding/teal_texture.jpg' %>) 0 0 repeat;
+    // background: #f4f4f2 url(<%= asset_path 'wedding/teal_texture.jpg' %>) 0 0 repeat;
+    background-color: $white-base;
     @extend .full-page;
 
     .credits {
       font-family: $wes-anderson-headings-font-family !important;
-      color: $mk-red;
+      color: $bold-base;
     }
   }
 
   .story-section {
+    background-image: url(<%= asset_path 'wedding/handhold_bw.jpg' %>);
     // background: #f4f4f2 url(<%= asset_path 'wedding/brownpaper.jpg' %>) 0 0 repeat;
-    background-color: $mk-white;
+    background-color: $dark-base;
     color: $gray-darker;
     font-family: $font-family-monospace;
     @extend .full-page;
@@ -88,8 +139,12 @@ html#wedding {
       font-family: $font-family-monospace;
     }
     .chapter {
-      padding: 15px;
+      @extend .shadow-box;
+      color: white;
       height: 350px;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     .carousel-control {
@@ -119,20 +174,20 @@ html#wedding {
       @extend .carousel-indicator-styles;
 
       .fa-stack-2x { //bottom layer (circle)
-        color: $mk-yellow;
+        color: $bright-base;
       }
       .fa-stack-1x { //top layer (flag or whatever)
-        color: $mk-white;
+        color: $highlight-base;
       }
     }
     .carousel-indicators li.active {
       @extend .carousel-indicator-styles;
 
       .fa-stack-2x { //bottom layer
-        color: $mk-yellow;
+        color: $highlight-base;
       }
       .fa-stack-1x { //top layer
-        color: $mk-red;
+        color: $bright-base;
       }
     }
 
@@ -141,15 +196,15 @@ html#wedding {
   .when-and-where {
     font-family: $wes-anderson-headings-font-family;
     // background-image: url(<%= asset_path 'wedding/handhold_bw.jpg' %>);
-    background-color: $mk-red;
+    background-color: $bold-base;
     @extend .full-page;
 
     .invitation {
       @extend .shadow-box;
-      border: 5px double $mk-yellow;
+      border: 5px double $highlight-base;
       max-width: 700px;
       padding: 20px;
-      color: $mk-yellow;
+      color: $highlight-base;
 
       h1 {
         font-size: 72px;
@@ -159,8 +214,7 @@ html#wedding {
   }
 
   .guide {
-    background-color: $mk-white;
-    color: $mk-yellow;
+    color: $highlight-base;
     background-image: url(<%= asset_path 'wedding/window_handholds.jpg' %>);
     @extend .full-page;
 
@@ -185,7 +239,7 @@ html#wedding {
           border-bottom: 3px solid transparent;
           cursor: pointer;
           &:hover {
-            border-bottom: 3px solid $mk-white;
+            border-bottom: 3px solid $bold-base;
           }
         }
       }
@@ -193,11 +247,11 @@ html#wedding {
 
     .place {
       a {
-        color: $mk-white;
+        color: $white-base;
         text-decoration: none;
       }
-      background-color: $mk-red;
-      color: $mk-white;
+      background-color: $dark-base;
+      color: $white-base;
       background-clip: padding-box;
       border: 10px solid transparent;
 
@@ -209,8 +263,8 @@ html#wedding {
 
       h2 {
         font-family: $acquatic-headings-font-family;
-        border-top: 1px solid $mk-white;
-        border-bottom: 1px solid $mk-white;
+        border-top: 1px solid $bright-base;
+        border-bottom: 1px solid $bright-base;
         margin-top: 10px;
         margin-bottom: 10px;
         padding: 10px;
@@ -218,7 +272,7 @@ html#wedding {
       }
 
       &:hover {
-        background-color: lighten($mk-red, 3%);
+        background-color: lighten($dark-base, 3%);
         -webkit-transition: background-color 100ms linear;
         -moz-transition: background-color 100ms linear;
         -o-transition: background-color 100ms linear;
@@ -228,16 +282,78 @@ html#wedding {
     }
   }
 
-
   .rsvp-section {
-    background-color: $mk-red;
+    background-color: darken($white-base, 5%);
+    text-align: center;
+
+    .header {
+      h1 {
+        font-family: $wes-anderson-headings-font-family;
+        color: $highlight-base;
+        text-transform: uppercase;
+        font-size: 72px;
+      }
+      h2 {
+        color: $highlight-base;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+        font-size: 24px;
+      }
+    }
+    .rsvp-buttons {
+      a {
+        text-decoration: none;
+        border-radius: 50%;
+        color: $bright-base;
+        font-size: 72px;
+        text-transform: uppercase;
+        font-family: $wes-anderson-headings-font-family;
+        padding: 15px;
+        &:hover {
+          border: 5px solid $bright-base;
+        }
+      }
+    }
+
+    form {
+      font-family: $wes-anderson-headings-font-family;
+      h2 {
+        color: $highlight-base;
+      }
+      input[type="submit"] {
+        background-color: $bright-base;
+        border: none;
+        text-transform: uppercase;
+        &:hover {
+          background-color: lighten($bright-base, 5%);
+        }
+      }
+    }
     // background-image: url(<%= asset_path 'wedding/moonrisekingdom-married.jpg' %>);
     @extend .full-page;
   }
 
-  .why-section {
-    background-color: $mk-white;
-    // background-image: url(<%= asset_path 'wedding/moonrisekingdom-married.jpg' %>);
+  .faq {
+    background: url(<%= asset_path 'wedding/bananas.jpeg' %>) 0 0 repeat;
+    
+    .panel {
+      font-family: $wes-anderson-headings-font-family;
+      border: none;
+    }
+    .panel-heading {
+      text-transform: uppercase;
+      color: $highlight-base;
+      background-color: $bright-base;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    p {
+      font-family: $font-family-monospace;
+    }
+
     @extend .full-page;
   }
 
@@ -245,9 +361,9 @@ html#wedding {
     position: relative;
     height: 5px;
     text-align: center;
-    color: $mk-white;
-    background-color: $mk-gold;
-    background: $mk-gold url(<%= asset_path 'wedding/gold-border.jpg' %>) 0 0 repeat;  
+    color: $white-base;
+    background-color: $dark-base;
+    // background: $mk-gold url(<%= asset_path 'wedding/gold-border.jpg' %>) 0 0 repeat;  
   }
 
 
@@ -307,7 +423,7 @@ html#wedding {
 
   .nav {
    li a {
-      color: $mk-blue;
+      color: $white-base;
       padding: 0px 0px 10px 0px;
       margin: 0px 15px;
       &:link, &:hover, &:visited, &:active {
@@ -356,9 +472,6 @@ html#wedding {
   }
 
   .shadow-box { //essentially a background box with low opacity
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 10px 6px -6px #777;
     background-color:rgba(25, 25, 25, 0.5);
   }
 
@@ -376,9 +489,4 @@ html#wedding {
   .sepia {
     -webkit-filter: sepia(100%);
   }
-
-  .huerotation {
-    -webkit-filter: hue-rotate(180deg);
-  }
-
 }
