@@ -112,6 +112,9 @@ $border-radius-small:       none !default;
 //== SOURCE/MORE REFERENCES - http://stephen.io/mediaqueries/
 //== NOTE: min-width/max-width refers to variable width of viewport. min-device-width/max-device-width is a set # based on width/height at time of page load.
 
+//simple
+//@media (max-width: $screen-phone) { }
+
 $min-tablet-width: 768px;
 $max-tablet-width: 1024px;
 $screen-tablet: 1024px;

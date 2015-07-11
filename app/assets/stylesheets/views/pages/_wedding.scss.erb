@@ -107,13 +107,20 @@ html#wedding {
       text-align: center;
       font-family: $acquatic-headings-font-family;
     }
-    h1 {
-      font-size: 94px;
-    }
+    h1 { font-size: 94px; }
+    h2 { font-size: 32px; }
     padding-top: 150px;
     font-family: $wes-anderson-headings-font-family;
     @extend .full-page;
     background-image: url(<%= asset_path 'wedding/cups_bw.jpg' %>);
+    @media (max-width: $screen-phone) {
+      h1 { font-size: 42px; }
+      h2 { font-size: 24px; }
+      background-image: url(<%= asset_path 'wedding/portrait_kisses_bw.jpg' %>);
+      .header {
+        margin-top: 100px;
+      }
+    }
   }
 
   .cast-section {
@@ -124,6 +131,37 @@ html#wedding {
     .credits {
       font-family: $wes-anderson-headings-font-family !important;
       color: $bold-base;
+    }
+    .family {
+      h2 { 
+        font-size: 14px; 
+      }
+    }
+    .role {
+      font-size: 32px;
+    }
+    #ampersand {
+      padding-top: 55%;
+      font-size: 150px;
+    }
+    @media (max-width: $min-tablet-width) {
+      i { 
+        font-size: 24px; 
+        color: $bright-base;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      #ampersand {
+        padding: 0;
+        margin: 0;
+      }
+      .role {
+        font-size: 38px;
+      }
+      .family {
+        h2 { font-size: 24px; }
+      }
     }
   }
 
@@ -191,6 +229,12 @@ html#wedding {
       }
     }
 
+    @media (max-width: $min-tablet-width) {
+      .chapter {
+        height: 550px;
+      }
+
+    }
   }
 
   .when-and-where {
@@ -370,10 +414,16 @@ html#wedding {
   // Navbar
 
   nav {
-    li {
-      a {
-        font-size: 24px;
-        font-family: $headings-font-family;
+    li a {
+      font-size: 24px;
+      font-family: $headings-font-family;
+    }
+    @media (max-width: $screen-phone) {
+      position: fixed;
+      top: 0;
+      li {
+        padding-bottom: 10px;
+        a { font-size: 18px; }
       }
     }
   }
@@ -394,6 +444,13 @@ html#wedding {
       height: 24px;
       position: absolute;
       bottom: -10px;
+    }
+
+    @media (max-width: $screen-phone) {
+      height: 90px;
+      &:after {
+        height: 14px;
+      }
     }
   }
 
