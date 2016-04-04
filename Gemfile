@@ -54,9 +54,9 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
-# gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
-ruby "2.1.5"
+ruby "2.1.7"
