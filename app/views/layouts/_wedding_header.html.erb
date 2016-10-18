@@ -1,59 +1,127 @@
-    <!-- Navigation -->
-    <nav id="wedding-header" class="navbar text-center" role="navigation">
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+
+<style type="text/css">
+
+#navbar-usermanagement{font-family:sans-serif;border-width:0 !important;border-radius:0 !important;margin:0 !important;/*padding-right:116px;*/text-transform: uppercase;}
+#navbar-usermanagement.navbar{min-height:32px;}
+#navbar-usermanagement .navbar-nav>li>a{color:#b0abb6 !important;padding:7px 15px;}
+.purple{background-color:#3e3c54 !important;}
+
+#navbar-main{background-color: white; border-radius:0 !important;border-color:#b0abb6;border-width:0 0 2px 0;border-style:solid;/*padding-right:58px;*/}
+#navbar-main .cta{background-color:#d2373b;border-radius:20px;color:#fff;}
+#navbar-main.navbar{margin-bottom:0 !important;}
+#navbar-main .navbar-nav>li>a{/*line-height:51px;*/font-family:sans-serif;padding-top:5px !important;padding-bottom:5px !important;}
+#navbar-main .navbar-brand{height:81px;padding:0 !important;line-height:81px !important;}
+#navbar-main #navbar ul{margin-top:25px;}
+.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover { border: none; background-color: transparent !important; }
+
+.navbar-brand{margin-left:0 !important;}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container { width: 980px; }
+}
+
+/* Smaller than desktops, start at tablet size */
+@media (max-width: 768px) {
+    #navbar-main .navbar-brand{ height: 50px; }
+    #navbar-main .navbar-brand img{ max-height: 50px; }
+    #navbar-main .navbar-nav>li:not(:last-child)>a { border-bottom: 1px solid #afaab5; }
+}
+
+/* Always place content below navbar */
+main {
+  margin-top: 150px;
+}
+/* Override bootstrap blue */
+main a {
+	color: #3a3d51;
+}
+
+/* Footer */
+
+#guarantee { line-height: 1.15em; margin-top: 30px; font-size: 28px; font-weight: lighter; }
+#guarantee .text-xl { font-size: 40px; font-weight: bold; }
+
+@media (max-width: 768px) {
+  #guarantee { text-align: center; }
+  #copyrightTerms { text-align: center; margin: 0; }
+}
+
+/* Big devices - get rid of padding-top so transparent navbar shines through */
+body.home { padding-top: 115px; }
+@media (min-width: 1200px) {
+  body.home {padding-top: 0;}
+
+  /* Insert that padding back in the homepage hero section */
+  .home #homepage-hero-heading, .home .carousel-control { margin-top: 115px; /* specifically for 'broken' carousel */position: absolute; top: 0; right: 20px; }
+}
+@media (max-width: 768px) {
+  body.home {padding-top: 105px; }
+}
+
+.homepage-hero-image{height:auto; max-height: 440px; padding: 0px;}
+
+#homepage-heroes { background-image: url("http://previews.123rf.com/images/epokrovsky/epokrovsky1107/epokrovsky110700015/9896533-Tourist-taking-a-picture-of-the-Eiffel-Tower-in-Paris-Stock-Photo.jpg");
+background-size: cover; height: 500px; }
+
+@media (max-width: 768px) {
+  #homepage-heroes { height: 300px; }
+}
+
+</style>
+
+
+<div id="navs" class="navbar-fixed-top">
+    <nav id="navbar-usermanagement" class="purple navbar navbar-default" style="background-color: #3e3c54;">
         <div class="container">
-
-            <div>
-                <ul class="nav navbar-nav text-uppercase text-headings">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll text-info" href="#cast">Cast</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#story">Story</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#when-and-where">DETAILS</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#what">GUIDE</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#rsvp">RSVP</a>
-                    </li>
-
-                    <li>
-                        <a class="page-scroll" href="#faq">FAQ</a>
-                    </li>
-                </ul>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="navbar-header">
+                        <img src="//p4.zdassets.com/hc/theme_assets/209329/200128955/logo-panasonic-small.png" alt="" border="0" />
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#login" data-toggle="modal" data-target="#modal-login">login</a></li>
+                            <li><a href="/store/cart"><img src="//p4.zdassets.com/hc/theme_assets/209329/200128955/icon-lock.png" alt="" border="0" /></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-
-<!--          <p>
-          <ul class="list-inline palette">
-            <li class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-            </li>
-            <li class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-            </li>
-            <li class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-            </li>
-            <li class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-            </li>
-            <li class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-            </li>
-            <li class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-            </li>
-          </ul>
-        </p> -->
     </nav>
 
+    <nav id="navbar-main" class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img class="img-responsive" src="//p4.zdassets.com/hc/theme_assets/209329/200128955/nubo-logo-nomarginleft.png" alt="Nubo" border="0" /></a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+                          <li><a href="http://liznubo.bigandbrown.com/home">Home</a></li>
+                          <li><a href="http://liznubo.bigandbrown.com/products">Products</a></li>
+                          <li><a href="http://liznubo.bigandbrown.com/store">Store</a></li>
+                          <li><a class="cta" href="http://liznubo.bigandbrown.com/store">Pre-Order</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
